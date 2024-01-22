@@ -1,0 +1,35 @@
+torch.float32 torch.float32 torch.float32
+0
+1
+2
+0
+1
+2
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 260, in <module>
+    losses = accelerator.gather(node_losses)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/accelerator.py", line 2159, in gather
+    return gather(tensor)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 344, in wrapper
+    return function(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 405, in gather
+    return _gpu_gather(tensor)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 324, in _gpu_gather
+    return recursively_apply(_gpu_gather_one, tensor, error_on_other_type=True)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 121, in recursively_apply
+    {
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 122, in <dictcomp>
+    k: recursively_apply(
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 121, in recursively_apply
+    {
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 122, in <dictcomp>
+    k: recursively_apply(
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 129, in recursively_apply
+    return func(data, *args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 314, in _gpu_gather_one
+    gather_op(output_tensors, tensor)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 1451, in wrapper
+    return func(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 2530, in all_gather_into_tensor
+    work = default_pg._allgather_base(output_tensor, input_tensor)
+RuntimeError: Tensors must be CUDA and dense

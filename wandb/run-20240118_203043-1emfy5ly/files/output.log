@@ -1,0 +1,69 @@
+2
+1
+0
+1
+2
+0
+1
+2
+step 0: train loss 0.7017, val loss 0.7002
+iter 0: loss 0.7024, time 3102.98ms
+iter_num:  1
+2
+iter 1: loss 0.7029, time 67.91ms
+iter_num:  2
+2
+iter 2: loss 0.7008, time 66.65ms
+iter_num:  3
+2
+iter 3: loss 0.7004, time 66.62ms
+iter_num:  4
+2
+iter 4: loss 0.7047, time 66.12ms
+iter_num:  5
+2
+iter 5: loss 0.7000, time 66.21ms
+iter_num:  6
+2
+iter 6: loss 0.6995, time 66.46ms
+iter_num:  7
+2
+iter 7: loss 0.7000, time 66.76ms
+iter_num:  8
+2
+iter 8: loss 0.6991, time 65.84ms
+iter_num:  9
+2
+iter 9: loss 0.7017, time 66.33ms
+iter_num:  10
+2
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 287, in <module>
+    pred_onsets, pred_vel = model(audio)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1139, in forward
+    if torch.is_grad_enabled() and self.reducer._rebuild_buckets():
+RuntimeError: Expected to have finished reduction in the prior iteration before starting a new one. This error indicates that your module has parameters that were not used in producing loss. You can enable unused parameter detection by passing the keyword argument `find_unused_parameters=True` to `torch.nn.parallel.DistributedDataParallel`, and by
+making sure all `forward` function outputs participate in calculating loss.
+If you already have done the above, then the distributed data parallel module wasn't able to locate the output tensors in the return value of your module's `forward` function. Please include the loss function and the structure of the return value of `forward` of your module when reporting this issue (e.g. list, dict, iterable).
+Parameters which did not receive grad for rank 0: crosstransformer.layers_t.4.linear2.bias, crosstransformer.layers_t.4.linear2.weight, crosstransformer.layers_t.4.linear1.bias, crosstransformer.layers_t.4.linear1.weight, crosstransformer.layers_t.4.self_attn.out_proj.bias, crosstransformer.layers_t.4.self_attn.out_proj.weight, crosstransformer.layers_t.4.self_attn.in_proj_bias, crosstransformer.layers_t.4.self_attn.in_proj_weight, crosstransformer.layers_t.3.linear2.bias, crosstransformer.layers_t.3.linear2.weight, crosstransformer.layers_t.3.linear1.bias, crosstransformer.layers_t.3.linear1.weight, crosstransformer.layers_t.3.cross_attn.out_proj.bias, crosstransformer.layers_t.3.cross_attn.out_proj.weight, crosstransformer.layers_t.2.linear2.bias, crosstransformer.layers_t.2.linear2.weight, crosstransformer.layers_t.2.linear1.bias, crosstransformer.layers_t.2.linear1.weight, crosstransformer.layers_t.2.self_attn.out_proj.bias, crosstransformer.layers_t.2.self_attn.out_proj.weight, crosstransformer.layers_t.2.self_attn.in_proj_bias, crosstransformer.layers_t.2.self_attn.in_proj_weight, crosstransformer.layers_t.1.linear2.bias, crosstransformer.layers_t.1.linear2.weight, crosstransformer.layers_t.1.linear1.bias, crosstransformer.layers_t.1.linear1.weight, crosstransformer.layers_t.1.cross_attn.out_proj.bias, crosstransformer.layers_t.1.cross_attn.out_proj.weight, crosstransformer.layers_t.0.linear2.bias, crosstransformer.layers_t.0.linear2.weight, crosstransformer.layers_t.0.linear1.bias, crosstransformer.layers_t.0.linear1.weight, crosstransformer.layers_t.0.self_attn.out_proj.bias, crosstransformer.layers_t.0.self_attn.out_proj.weight, crosstransformer.layers_t.0.self_attn.in_proj_bias, crosstransformer.layers_t.0.self_attn.in_proj_weight, crosstransformer.layers.4.linear2.bias, crosstransformer.layers.4.linear2.weight, crosstransformer.layers.4.linear1.bias, crosstransformer.layers.4.linear1.weight, crosstransformer.layers.4.self_attn.out_proj.bias, crosstransformer.layers.4.self_attn.out_proj.weight, crosstransformer.layers.4.self_attn.in_proj_bias, crosstransformer.layers.4.self_attn.in_proj_weight, crosstransformer.layers.3.linear2.bias, crosstransformer.layers.3.linear2.weight, crosstransformer.layers.3.linear1.bias, crosstransformer.layers.3.linear1.weight, crosstransformer.layers.3.cross_attn.out_proj.bias, crosstransformer.layers.3.cross_attn.out_proj.weight, crosstransformer.layers.2.linear2.bias, crosstransformer.layers.2.linear2.weight, crosstransformer.layers.2.linear1.bias, crosstransformer.layers.2.linear1.weight, crosstransformer.layers.2.self_attn.out_proj.bias, crosstransformer.layers.2.self_attn.out_proj.weight, crosstransformer.layers.2.self_attn.in_proj_bias, crosstransformer.layers.2.self_attn.in_proj_weight, crosstransformer.layers.1.linear2.bias, crosstransformer.layers.1.linear2.weight, crosstransformer.layers.1.linear1.bias, crosstransformer.layers.1.linear1.weight, crosstransformer.layers.1.cross_attn.out_proj.bias, crosstransformer.layers.1.cross_attn.out_proj.weight, crosstransformer.layers.0.linear2.bias, crosstransformer.layers.0.linear2.weight, crosstransformer.layers.0.linear1.bias, crosstransformer.layers.0.linear1.weight, crosstransformer.layers.0.self_attn.out_proj.bias, crosstransformer.layers.0.self_attn.out_proj.weight, crosstransformer.layers.0.self_attn.in_proj_bias, crosstransformer.layers.0.self_attn.in_proj_weight, tdecoder_vel.3.rewrite.bias, tdecoder_vel.3.rewrite.weight, tdecoder_vel.3.conv_tr.bias, tdecoder_vel.3.conv_tr.weight, tdecoder_vel.2.rewrite.bias, tdecoder_vel.2.rewrite.weight, tdecoder_vel.2.conv_tr.bias, tdecoder_vel.2.conv_tr.weight, tdecoder_vel.1.rewrite.bias, tdecoder_vel.1.rewrite.weight, tdecoder_vel.1.conv_tr.bias, tdecoder_vel.1.conv_tr.weight, tdecoder_vel.0.rewrite.bias, tdecoder_vel.0.rewrite.weight, tdecoder_vel.0.conv_tr.bias, tdecoder_vel.0.conv_tr.weight, tdecoder.3.rewrite.bias, tdecoder.3.rewrite.weight, tdecoder.3.conv_tr.bias, tdecoder.3.conv_tr.weight, tdecoder.2.rewrite.bias, tdecoder.2.rewrite.weight, tdecoder.2.conv_tr.bias, tdecoder.2.conv_tr.weight, tdecoder.1.rewrite.bias, tdecoder.1.rewrite.weight, tdecoder.1.conv_tr.bias, tdecoder.1.conv_tr.weight, tdecoder.0.rewrite.bias, tdecoder.0.rewrite.weight, tdecoder.0.conv_tr.bias, tdecoder.0.conv_tr.weight, tencoder.3.dconv.layers.1.3.bias, tencoder.3.dconv.layers.1.3.weight, tencoder.3.dconv.layers.1.0.bias, tencoder.3.dconv.layers.1.0.weight, tencoder.3.dconv.layers.0.3.bias, tencoder.3.dconv.layers.0.3.weight, tencoder.3.dconv.layers.0.0.bias, tencoder.3.dconv.layers.0.0.weight, tencoder.3.rewrite.bias, tencoder.3.rewrite.weight, tencoder.3.conv.bias, tencoder.3.conv.weight, tencoder.2.dconv.layers.1.3.bias, tencoder.2.dconv.layers.1.3.weight, tencoder.2.dconv.layers.1.0.bias, tencoder.2.dconv.layers.1.0.weight, tencoder.2.dconv.layers.0.3.bias, tencoder.2.dconv.layers.0.3.weight, tencoder.2.dconv.layers.0.0.bias, tencoder.2.dconv.layers.0.0.weight, tencoder.2.rewrite.bias, tencoder.2.rewrite.weight, tencoder.2.conv.bias, tencoder.2.conv.weight, tencoder.1.dconv.layers.1.3.bias, tencoder.1.dconv.layers.1.3.weight, tencoder.1.dconv.layers.1.0.bias, tencoder.1.dconv.layers.1.0.weight, tencoder.1.dconv.layers.0.3.bias, tencoder.1.dconv.layers.0.3.weight, tencoder.1.dconv.layers.0.0.bias, tencoder.1.dconv.layers.0.0.weight, tencoder.1.rewrite.bias, tencoder.1.rewrite.weight, tencoder.1.conv.bias, tencoder.1.conv.weight, tencoder.0.dconv.layers.1.3.bias, tencoder.0.dconv.layers.1.3.weight, tencoder.0.dconv.layers.1.0.bias, tencoder.0.dconv.layers.1.0.weight, tencoder.0.dconv.layers.0.3.bias, tencoder.0.dconv.layers.0.3.weight, tencoder.0.dconv.layers.0.0.bias, tencoder.0.dconv.layers.0.0.weight, tencoder.0.rewrite.bias, tencoder.0.rewrite.weight, tencoder.0.conv.bias, tencoder.0.conv.weight, decoder_vel.3.rewrite.bias, decoder_vel.3.rewrite.weight, decoder_vel.3.conv_tr.bias, decoder_vel.3.conv_tr.weight, decoder_vel.2.rewrite.bias, decoder_vel.2.rewrite.weight, decoder_vel.2.conv_tr.bias, decoder_vel.2.conv_tr.weight, decoder_vel.1.rewrite.bias, decoder_vel.1.rewrite.weight, decoder_vel.1.conv_tr.bias, decoder_vel.1.conv_tr.weight, decoder_vel.0.rewrite.bias, decoder_vel.0.rewrite.weight, decoder_vel.0.conv_tr.bias, decoder_vel.0.conv_tr.weight, decoder.3.rewrite.bias, decoder.3.rewrite.weight, decoder.3.conv_tr.bias, decoder.3.conv_tr.weight, decoder.2.rewrite.bias, decoder.2.rewrite.weight, decoder.2.conv_tr.bias, decoder.2.conv_tr.weight, decoder.1.rewrite.bias, decoder.1.rewrite.weight, decoder.1.conv_tr.bias, decoder.1.conv_tr.weight, decoder.0.rewrite.bias, decoder.0.rewrite.weight, decoder.0.conv_tr.bias, decoder.0.conv_tr.weight, encoder.3.dconv.layers.1.3.bias, encoder.3.dconv.layers.1.3.weight, encoder.3.dconv.layers.1.0.bias, encoder.3.dconv.layers.1.0.weight, encoder.3.dconv.layers.0.3.bias, encoder.3.dconv.layers.0.3.weight, encoder.3.dconv.layers.0.0.bias, encoder.3.dconv.layers.0.0.weight, encoder.3.rewrite.bias, encoder.3.rewrite.weight, encoder.3.conv.bias, encoder.3.conv.weight, encoder.2.dconv.layers.1.3.bias, encoder.2.dconv.layers.1.3.weight, encoder.2.dconv.layers.1.0.bias, encoder.2.dconv.layers.1.0.weight, encoder.2.dconv.layers.0.3.bias, encoder.2.dconv.layers.0.3.weight, encoder.2.dconv.layers.0.0.bias, encoder.2.dconv.layers.0.0.weight, encoder.2.rewrite.bias, encoder.2.rewrite.weight, encoder.2.conv.bias, encoder.2.conv.weight, encoder.1.dconv.layers.1.3.bias, encoder.1.dconv.layers.1.3.weight, encoder.1.dconv.layers.1.0.bias, encoder.1.dconv.layers.1.0.weight, encoder.1.dconv.layers.0.3.bias, encoder.1.dconv.layers.0.3.weight, encoder.1.dconv.layers.0.0.bias, encoder.1.dconv.layers.0.0.weight, encoder.1.rewrite.bias, encoder.1.rewrite.weight, encoder.1.conv.bias, encoder.1.conv.weight, encoder.0.dconv.layers.1.3.bias, encoder.0.dconv.layers.1.3.weight, encoder.0.dconv.layers.1.0.bias, encoder.0.dconv.layers.1.0.weight, encoder.0.dconv.layers.0.3.bias, encoder.0.dconv.layers.0.3.weight, encoder.0.dconv.layers.0.0.bias, encoder.0.dconv.layers.0.0.weight, encoder.0.rewrite.bias, encoder.0.rewrite.weight, encoder.0.conv.bias, encoder.0.conv.weight
+Parameter indices which did not receive grad for rank 0: 0 1 2 3 4 5 8 9 13 14 17 18 22 23 24 25 26 27 30 31 35 36 39 40 44 45 46 47 48 49 52 53 57 58 61 62 66 67 68 69 70 71 74 75 79 80 83 84 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 128 129 133 134 137 138 142 143 144 145 146 147 150 151 ...
+iter 10: loss 0.7027, time 66.54ms
+iter_num:  11
+2
+iter 11: loss 0.6995, time 66.30ms
+iter_num:  12
+2
+iter 12: loss 0.6991, time 65.94ms
+iter_num:  13
+2
+iter 13: loss 0.6995, time 66.43ms
+iter_num:  14
+2
+iter 14: loss 0.7004, time 65.98ms
+iter_num:  15
+2
+iter 15: loss 0.7031, time 70.32ms
+iter_num:  16
+2

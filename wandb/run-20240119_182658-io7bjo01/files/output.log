@@ -1,0 +1,26 @@
+torch.float32 torch.float32 torch.float32
+0
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 259, in <module>
+    losses = estimate_loss()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 201, in estimate_loss
+    onset_pred, velocity_pred = model(waveform)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1156, in forward
+    output = self._run_ddp_forward(*inputs, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1110, in _run_ddp_forward
+    return module_to_run(*inputs[0], **kwargs[0])  # type: ignore[index]
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 687, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 675, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/amp/autocast_mode.py", line 14, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/demucs/htdemucs.py", line 789, in forward
+    x = x.view(B, length, S)
+RuntimeError: view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.

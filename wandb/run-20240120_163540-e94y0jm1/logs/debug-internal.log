@@ -1,0 +1,78 @@
+2024-01-20 16:35:40,908 INFO    StreamThr :258068 [internal.py:wandb_internal():86] W&B internal server running at pid: 258068, started at: 2024-01-20 16:35:40.908402
+2024-01-20 16:35:40,909 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status
+2024-01-20 16:35:40,910 INFO    WriterThread:258068 [datastore.py:open_for_write():87] open: /home/robertthomas/rileyProject/demucs/wandb/run-20240120_163540-e94y0jm1/run-e94y0jm1.wandb
+2024-01-20 16:35:40,910 DEBUG   SenderThread:258068 [sender.py:send():382] send: header
+2024-01-20 16:35:40,948 DEBUG   SenderThread:258068 [sender.py:send():382] send: run
+2024-01-20 16:35:41,109 INFO    SenderThread:258068 [dir_watcher.py:__init__():211] watching files in: /home/robertthomas/rileyProject/demucs/wandb/run-20240120_163540-e94y0jm1/files
+2024-01-20 16:35:41,109 INFO    SenderThread:258068 [sender.py:_start_run_threads():1136] run started: e94y0jm1 with start time 1705786540.908377
+2024-01-20 16:35:41,113 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: check_version
+2024-01-20 16:35:41,113 DEBUG   SenderThread:258068 [sender.py:send_request():409] send_request: check_version
+2024-01-20 16:35:41,181 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: run_start
+2024-01-20 16:35:41,197 DEBUG   HandlerThread:258068 [system_info.py:__init__():27] System info init
+2024-01-20 16:35:41,197 DEBUG   HandlerThread:258068 [system_info.py:__init__():42] System info init done
+2024-01-20 16:35:41,197 INFO    HandlerThread:258068 [system_monitor.py:start():194] Starting system monitor
+2024-01-20 16:35:41,198 INFO    SystemMonitor:258068 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-20 16:35:41,198 INFO    HandlerThread:258068 [system_monitor.py:probe():214] Collecting system info
+2024-01-20 16:35:41,198 INFO    SystemMonitor:258068 [interfaces.py:start():190] Started cpu monitoring
+2024-01-20 16:35:41,199 INFO    SystemMonitor:258068 [interfaces.py:start():190] Started disk monitoring
+2024-01-20 16:35:41,199 INFO    SystemMonitor:258068 [interfaces.py:start():190] Started gpu monitoring
+2024-01-20 16:35:41,200 INFO    SystemMonitor:258068 [interfaces.py:start():190] Started memory monitoring
+2024-01-20 16:35:41,200 INFO    SystemMonitor:258068 [interfaces.py:start():190] Started network monitoring
+2024-01-20 16:35:41,215 DEBUG   HandlerThread:258068 [system_info.py:probe():151] Probing system
+2024-01-20 16:35:41,217 DEBUG   HandlerThread:258068 [system_info.py:_probe_git():136] Probing git
+2024-01-20 16:35:41,221 DEBUG   HandlerThread:258068 [system_info.py:_probe_git():144] Probing git done
+2024-01-20 16:35:41,221 DEBUG   HandlerThread:258068 [system_info.py:probe():199] Probing system done
+2024-01-20 16:35:41,221 DEBUG   HandlerThread:258068 [system_monitor.py:probe():223] {'os': 'Linux-5.14.0-381.el9.x86_64-x86_64-with-glibc2.34', 'python': '3.9.18', 'heartbeatAt': '2024-01-20T21:35:41.215388', 'startedAt': '2024-01-20T21:35:40.906521', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/robertthomas/rileyProject/demucs/new_trainer.py', 'codePathLocal': 'new_trainer.py', 'codePath': 'new_trainer.py', 'git': {'remote': 'https://github.com/rtavasso1/demucs', 'commit': 'c88061daba9ce55ab4a19108fbee4e95125295a5'}, 'email': 'timurichk@yahoo.com', 'root': '/home/robertthomas/rileyProject/demucs', 'host': 'localhost.localdomain', 'username': 'robertthomas', 'executable': '/home/robertthomas/miniconda3/envs/demucsRiley/bin/python3.9', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 3154.24625, 'min': 800.0, 'max': 4937.5}, 'cpu_freq_per_core': [{'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 5435.876, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 5500.004, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}], 'disk': {'/': {'total': 69.9375, 'used': 16.52837371826172}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}, {'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 62.28952407836914}}
+2024-01-20 16:35:41,221 INFO    HandlerThread:258068 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-20 16:35:41,221 INFO    HandlerThread:258068 [system_monitor.py:probe():227] Publishing system info
+2024-01-20 16:35:41,221 DEBUG   HandlerThread:258068 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-01-20 16:35:42,017 DEBUG   HandlerThread:258068 [system_info.py:_save_conda():220] Saving conda packages done
+2024-01-20 16:35:42,017 INFO    HandlerThread:258068 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-20 16:35:42,018 DEBUG   SenderThread:258068 [sender.py:send():382] send: files
+2024-01-20 16:35:42,018 INFO    SenderThread:258068 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-20 16:35:42,021 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-20 16:35:42,021 DEBUG   SenderThread:258068 [sender.py:send_request():409] send_request: python_packages
+2024-01-20 16:35:42,021 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-20 16:35:42,021 DEBUG   SenderThread:258068 [sender.py:send_request():409] send_request: stop_status
+2024-01-20 16:35:42,022 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-20 16:35:42,109 INFO    Thread-12 :258068 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240120_163540-e94y0jm1/files/requirements.txt
+2024-01-20 16:35:42,110 INFO    Thread-12 :258068 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240120_163540-e94y0jm1/files/wandb-metadata.json
+2024-01-20 16:35:42,110 INFO    Thread-12 :258068 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240120_163540-e94y0jm1/files/conda-environment.yaml
+2024-01-20 16:35:42,125 DEBUG   SenderThread:258068 [sender.py:send():382] send: telemetry
+2024-01-20 16:35:42,308 INFO    wandb-upload_0:258068 [upload_job.py:push():131] Uploaded file /tmp/tmpz__m5fcawandb/yrk8h0oz-wandb-metadata.json
+2024-01-20 16:35:43,109 INFO    Thread-12 :258068 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240120_163540-e94y0jm1/files/output.log
+2024-01-20 16:35:45,110 INFO    Thread-12 :258068 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240120_163540-e94y0jm1/files/output.log
+2024-01-20 16:35:46,374 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:35:51,375 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:35:56,375 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:35:57,022 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-20 16:35:57,022 DEBUG   SenderThread:258068 [sender.py:send_request():409] send_request: stop_status
+2024-01-20 16:35:57,023 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-20 16:36:02,169 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:07,170 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:12,021 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-20 16:36:12,022 DEBUG   SenderThread:258068 [sender.py:send_request():409] send_request: stop_status
+2024-01-20 16:36:12,062 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-20 16:36:14,626 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:16,113 INFO    Thread-12 :258068 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240120_163540-e94y0jm1/files/config.yaml
+2024-01-20 16:36:20,264 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:25,264 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:27,022 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-20 16:36:27,022 DEBUG   SenderThread:258068 [sender.py:send_request():409] send_request: stop_status
+2024-01-20 16:36:27,063 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-20 16:36:31,096 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:36,097 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:41,098 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:41,200 DEBUG   SystemMonitor:258068 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-20 16:36:41,201 DEBUG   SenderThread:258068 [sender.py:send():382] send: stats
+2024-01-20 16:36:42,022 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-20 16:36:42,022 DEBUG   SenderThread:258068 [sender.py:send_request():409] send_request: stop_status
+2024-01-20 16:36:42,063 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-20 16:36:46,135 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:51,136 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:56,137 DEBUG   HandlerThread:258068 [handler.py:handle_request():146] handle_request: status_report
+2024-01-20 16:36:57,210 INFO    memory    :258068 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2024-01-20 16:36:57,210 DEBUG   SystemMonitor:258068 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-20 16:36:57,211 DEBUG   SystemMonitor:258068 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-20 16:36:57,211 DEBUG   SenderThread:258068 [sender.py:send():382] send: stats
+2024-01-20 16:36:58,150 INFO    MainThread:258068 [internal.py:handle_exit():76] Internal process exited

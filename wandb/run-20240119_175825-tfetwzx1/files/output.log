@@ -1,0 +1,12 @@
+torch.float32 torch.float32 torch.float32
+0
+1
+2
+0
+1
+2
+node_losses:  {'train': {'Loss': tensor(2.0707, device='cuda:0'), 'F1': tensor(0.0003, device='cuda:0'), 'F1 w/ Vel': tensor(8.2528e-05, device='cuda:0')}, 'val': {'Loss': tensor(2.2260, device='cuda:0'), 'F1': tensor(0.0004, device='cuda:0'), 'F1 w/ Vel': tensor(9.6482e-05, device='cuda:0')}}
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 264, in <module>
+    losses[split][metric] = accelerator.gather(node_losses[split][metric])
+KeyError: 'train'

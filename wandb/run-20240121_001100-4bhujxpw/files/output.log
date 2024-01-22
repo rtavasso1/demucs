@@ -1,0 +1,27 @@
+torch.float32 torch.float32 torch.float32
+0
+torch.Size([2, 1, 529200]) torch.Size([2, 9600, 88]) torch.Size([2, 9600, 88])
+tensor(True, device='cuda:0') tensor(True, device='cuda:0')
+mel forward called
+stft done
+mel:  torch.Size([2, 250, 1201])
+onset_pred:  torch.Size([2, 9600, 88])
+velocity_pred:  torch.Size([2, 9600, 88])
+torch.Size([2, 9600, 88]) torch.Size([2, 9600, 88])
+loss runned
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 282, in <module>
+    losses = estimate_loss()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 227, in estimate_loss
+    f1, f1_w_vel = f1_score(onset, onset_pred, velocity, velocity_pred)
+  File "/home/robertthomas/rileyProject/demucs/metrics.py", line 75, in f1_score
+    f1_score_w_vel = mir_eval.transcription_velocity.precision_recall_f1_overlap(reference_intervals, reference_pitches, reference_velocities, estimated_intervals, estimated_pitches, estimated_velocities)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/transcription_velocity.py", line 291, in precision_recall_f1_overlap
+    matching = match_notes(
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/transcription_velocity.py", line 164, in match_notes
+    matching = transcription.match_notes(
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/transcription.py", line 426, in match_notes
+    pitch_distances = np.abs(1200*np.subtract.outer(np.log2(ref_pitches),
+KeyboardInterrupt

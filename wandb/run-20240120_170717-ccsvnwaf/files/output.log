@@ -1,0 +1,21 @@
+torch.float32 torch.float32 torch.float32
+0
+torch.Size([2, 1, 529200]) torch.Size([2, 9600, 88]) torch.Size([2, 9600, 88])
+tensor(True, device='cuda:0') tensor(True, device='cuda:0')
+mel forward called
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 281, in <module>
+    losses = estimate_loss()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 215, in estimate_loss
+    mel = melspectrogram(waveform.squeeze())
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/model.py", line 102, in forward
+    magnitudes, phases = self.stft(y)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/model.py", line 63, in forward
+    forward_transform = F.conv1d(
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same

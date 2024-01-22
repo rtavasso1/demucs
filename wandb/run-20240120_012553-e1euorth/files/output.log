@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 246, in <module>
+    audio, onsets, velocities = shuffled_mixup(batch, block_size, sample_length)
+  File "/home/robertthomas/rileyProject/demucs/data.py", line 129, in shuffled_mixup
+    waveforms, onsets, velocities = shuffle(waveforms, onsets, velocities, num_samples, sample_length)
+  File "/home/robertthomas/rileyProject/demucs/data.py", line 108, in shuffle
+    chunked_onsets = onsets.view(sample_length * batch_size, num_samples // sample_length)
+RuntimeError: shape '[24, 44100]' is invalid for input of size 93139200

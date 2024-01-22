@@ -1,0 +1,9 @@
+torch.float32 torch.float32 torch.float32
+0
+torch.Size([2, 1, 529200]) torch.Size([2, 9600, 88]) torch.Size([2, 9600, 88])
+tensor(True, device='cuda:0') tensor(True, device='cuda:0')
+mel forward called
+stft done
+mel:  torch.Size([2, 250, 1201])
+onset_pred:  torch.Size([2, 9600, 88])
+velocity_pred:  torch.Size([2, 9600, 88])

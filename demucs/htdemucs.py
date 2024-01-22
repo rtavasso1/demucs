@@ -8,6 +8,8 @@
 This code contains the spectrogram and Hybrid version of Demucs.
 """
 import math
+from copy import deepcopy
+import inspect
 
 from openunmix.filtering import wiener
 import torch
@@ -324,10 +326,15 @@ class HTDemucs(nn.Module):
                 enc = MultiWrap(enc, multi_freqs)
             self.encoder.append(enc)
             if index == 0:
-                chin = self.audio_channels * len(self.sources)
+                chin = self.audio_channels * len(self.sources) # midi channels
                 chin_z = chin
                 if self.cac:
                     chin_z *= 2
+            # Modify the number of channels for the last decoder so that there are 88 midi channels
+            # if index == depth - 1:
+            #     # Set the output channels of the last layer to 88
+            #     chin = 88
+            #     chin_z = 88
             dec = HDecLayer(
                 chout_z,
                 chin_z,
@@ -337,6 +344,11 @@ class HTDemucs(nn.Module):
                 **kw_dec
             )
             if velocity_branch:
+                if index == 0:
+                    chin = self.audio_channels # 1 channel for velocity
+                    chin_z = chin
+                    if self.cac:
+                        chin_z *= 2
                 dec_vel = HDecLayer(
                 chout_z,
                 chin_z,
@@ -350,6 +362,11 @@ class HTDemucs(nn.Module):
                 if velocity_branch:
                     dec_vel = MultiWrap(dec_vel, multi_freqs)
             if freq:
+                if index == 0:
+                    chin = self.audio_channels * len(self.sources) # 88 channel for midi
+                    chin_z = chin
+                    if self.cac:
+                        chin_z *= 2
                 tdec = HDecLayer(
                     chout,
                     chin,
@@ -360,6 +377,11 @@ class HTDemucs(nn.Module):
                     **kwt
                 )
                 if velocity_branch:
+                    if index == 0:
+                        chin = self.audio_channels # 1 channel for velocity
+                        chin_z = chin
+                        if self.cac:
+                            chin_z *= 2
                     tdec_vel = HDecLayer(
                     chout,
                     chin,
@@ -445,6 +467,9 @@ class HTDemucs(nn.Module):
             )
         else:
             self.crosstransformer = None
+        
+        # self.accelerator = Accelerator(mixed_precision='no')
+        self.ctx = torch.amp.autocast(device_type='cuda', dtype=torch.float32)
 
     def _spec(self, x):
         hl = self.hop_length
@@ -461,6 +486,9 @@ class HTDemucs(nn.Module):
         assert hl == nfft // 4
         le = int(math.ceil(x.shape[-1] / hl))
         pad = hl // 2 * 3
+        #with torch.cuda.amp.autocast(enabled=False):
+        #x = x.float()
+        #print(x.dtype, x.device)
         x = pad1d(x, (pad, pad + le * hl - x.shape[-1]), mode="reflect")
 
         z = spectro(x, nfft, hl)[..., :-1, :]
@@ -469,6 +497,7 @@ class HTDemucs(nn.Module):
         return z
 
     def _ispec(self, z, length=None, scale=0):
+        #z = z.to(torch.float32)
         hl = self.hop_length // (4**scale)
         z = F.pad(z, (0, 0, 0, 1))
         z = F.pad(z, (2, 2))
@@ -476,6 +505,7 @@ class HTDemucs(nn.Module):
         le = hl * int(math.ceil(length / hl)) + 2 * pad
         x = ispectro(z, hl, length=le)
         x = x[..., pad: pad + length]
+        #z = z.to(torch.float16)
         return x
 
     def _magnitude(self, z):
@@ -554,9 +584,10 @@ class HTDemucs(nn.Module):
         return training_length
 
     def forward(self, mix):
-        print('Original shape: ', mix.shape)
+        #print('Original shape: ', mix.shape)
         length = mix.shape[-1]
         length_pre_pad = None
+        #print(mix.device, mix.dtype)
         if self.use_train_segment:
             if self.training:
                 self.segment = Fraction(mix.shape[-1], self.samplerate)
@@ -565,12 +596,14 @@ class HTDemucs(nn.Module):
                 if mix.shape[-1] < training_length:
                     length_pre_pad = mix.shape[-1]
                     mix = F.pad(mix, (0, training_length - length_pre_pad))
-        z = self._spec(mix)
-        mag = self._magnitude(z).to(mix.device)
-        x = mag
+
+        with self.ctx:
+            z = self._spec(mix)
+            mag = self._magnitude(z)
+            x = mag
 
         B, C, Fq, T = x.shape
-        print('Shape after spec: ', x.shape)
+        #print('Shape after spec: ', x.shape)
         # unlike previous Demucs, we always normalize because it is easier.
         mean = x.mean(dim=(1, 2, 3), keepdim=True)
         std = x.std(dim=(1, 2, 3), keepdim=True)
@@ -582,7 +615,7 @@ class HTDemucs(nn.Module):
         meant = xt.mean(dim=(1, 2), keepdim=True)
         stdt = xt.std(dim=(1, 2), keepdim=True)
         xt = (xt - meant) / (1e-5 + stdt)
-        print('Time branch shape: ', xt.shape)
+        #print('Time branch shape: ', xt.shape)
         # okay, this is a giant mess I know...
         saved = []  # skip connections, freq.
         saved_t = []  # skip connections, time.
@@ -613,7 +646,7 @@ class HTDemucs(nn.Module):
 
             saved.append(x)
 
-        print('Spec branch after encoder: ', x.shape, 'Time branch after encoder: ', xt.shape)
+        #print('Spec branch after encoder: ', x.shape, 'Time branch after encoder: ', xt.shape)
         if self.crosstransformer:
             if self.bottom_channels:
                 b, c, f, t = x.shape
@@ -630,16 +663,17 @@ class HTDemucs(nn.Module):
                 x = rearrange(x, "b c (f t)-> b c f t", f=f)
                 xt = self.channel_downsampler_t(xt)
 
+        
         if self.velocity_branch:
             # copy saved, saved_t, lengths, lengths_t for velocity branch
-            from copy import deepcopy
-            saved_vel = deepcopy(saved)
-            saved_t_vel = deepcopy(saved_t)
+            
+            saved_vel = [tensor.clone() for tensor in saved]
+            saved_t_vel = [tensor.clone() for tensor in saved_t]
             lengths_vel = deepcopy(lengths)
             lengths_t_vel = deepcopy(lengths_t)
 
-            x_vel = deepcopy(x)
-            xt_vel = deepcopy(xt)
+            x_vel = x.clone()
+            xt_vel = xt.clone()
 
         for idx, decode in enumerate(self.decoder):
             skip = saved.pop(-1)
@@ -678,7 +712,7 @@ class HTDemucs(nn.Module):
                         skip = saved_t_vel.pop(-1)
                         xt_vel, _ = tdec_vel(xt_vel, skip, length_t_vel)
 
-        print('Spec branch after decoder: ', x.shape, 'Time branch after decoder: ', xt.shape)
+        #print('Spec branch after decoder: ', x.shape, 'Time branch after decoder: ', xt.shape)
         # Let's make sure we used all stored skip connections.
         assert len(saved) == 0
         assert len(lengths_t) == 0
@@ -693,7 +727,7 @@ class HTDemucs(nn.Module):
         x = x.view(B, S, -1, Fq, T)
         x = x * std[:, None] + mean[:, None]
         if self.velocity_branch:
-            x_vel = x_vel.view(B, S, -1, Fq, T)
+            x_vel = x_vel.view(B, 1, -1, Fq, T)
             x_vel = x_vel * std[:, None] + mean[:, None]
 
         # to cpu as mps doesnt support complex numbers
@@ -742,9 +776,9 @@ class HTDemucs(nn.Module):
         if self.velocity_branch:
             if self.use_train_segment:
                 if self.training:
-                    xt_vel = xt_vel.view(B, S, -1, length)
+                    xt_vel = xt_vel.view(B, 1, -1, length)
                 else:
-                    xt_vel = xt_vel.view(B, S, -1, training_length)
+                    xt_vel = xt_vel.view(B, 1, -1, training_length)
             else:
                 xt_vel = xt_vel.view(B, S, -1, length)
             xt_vel = xt_vel * stdt[:, None] + meant[:, None]
@@ -752,5 +786,50 @@ class HTDemucs(nn.Module):
             if length_pre_pad:
                 x_vel = x_vel[..., :length_pre_pad]
             
+            x = x.view(B, length, S)
+            x_vel = x_vel.view(B, length)
             return x, x_vel
-        return x
+        return x, None
+
+    def configure_optimizers(self, weight_decay, learning_rate, betas, device_type):
+        # start with all of the candidate parameters
+        param_dict = {pn: p for pn, p in self.named_parameters()}
+        # filter out those that do not require grad
+        param_dict = {pn: p for pn, p in param_dict.items() if p.requires_grad}
+        # create optim groups. Any parameters that is 2D will be weight decayed, otherwise no.
+        # i.e. all weight tensors in matmuls + embeddings decay, all biases and layernorms don't.
+        decay_params = [p for n, p in param_dict.items() if p.dim() >= 2]
+        nodecay_params = [p for n, p in param_dict.items() if p.dim() < 2]
+        optim_groups = [
+            {'params': decay_params, 'weight_decay': weight_decay},
+            {'params': nodecay_params, 'weight_decay': 0.0}
+        ]
+        num_decay_params = sum(p.numel() for p in decay_params)
+        num_nodecay_params = sum(p.numel() for p in nodecay_params)
+        print(f"num decayed parameter tensors: {len(decay_params)}, with {num_decay_params:,} parameters")
+        print(f"num non-decayed parameter tensors: {len(nodecay_params)}, with {num_nodecay_params:,} parameters")
+        # Create AdamW optimizer and use the fused version if it is available
+        fused_available = 'fused' in inspect.signature(torch.optim.AdamW).parameters
+        use_fused = fused_available and device_type == 'cuda'
+        use_fused = False
+        extra_args = dict(fused=True) if use_fused else dict()
+        optimizer = torch.optim.AdamW(optim_groups, lr=learning_rate, betas=betas, **extra_args)
+        print(f"using fused AdamW: {use_fused}")
+
+        return optimizer
+
+    def estimate_mfu(self, fwdbwd_per_iter, dt):
+        """ estimate model flops utilization (MFU) in units of A100 bfloat16 peak FLOPS """
+        # first estimate the number of flops we do per iteration.
+        # see PaLM paper Appendix B as ref: https://arxiv.org/abs/2204.02311
+        N = self.get_num_params()
+        cfg = self.config
+        L, H, Q, T = cfg.n_layer, cfg.n_head, cfg.n_embd//cfg.n_head, cfg.block_size
+        flops_per_token = 6*N + 12*L*H*Q*T
+        flops_per_fwdbwd = flops_per_token * T
+        flops_per_iter = flops_per_fwdbwd * fwdbwd_per_iter
+        # express our flops throughput as ratio of A100 bfloat16 peak flops
+        flops_achieved = flops_per_iter * (1.0/dt) # per second
+        flops_promised = 312e12 # A100 GPU bfloat16 peak flops is 312 TFLOPS
+        mfu = flops_achieved / flops_promised
+        return mfu

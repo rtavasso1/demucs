@@ -1,0 +1,88 @@
+torch.float32 torch.float32 torch.float32
+0
+1
+2
+0
+1
+2
+step 0: train loss 1.6312, val loss 2.4762
+iter 0: loss 1.8972, time 14515.61ms
+iter_num:  1
+iter 1: loss 1.5000, time 1032.86ms
+iter_num:  2
+iter 2: loss 1.6230, time 553.57ms
+iter_num:  3
+iter 3: loss 0.9380, time 550.34ms
+iter_num:  4
+iter 4: loss 1.9188, time 558.60ms
+iter_num:  5
+iter 5: loss 2.0384, time 552.40ms
+iter_num:  6
+iter 6: loss 1.5817, time 550.67ms
+iter_num:  7
+iter 7: loss 2.1118, time 550.38ms
+iter_num:  8
+iter 8: loss 1.1485, time 548.11ms
+iter_num:  9
+iter 9: loss 1.0801, time 553.43ms
+iter_num:  10
+iter 10: loss 1.8017, time 552.70ms
+iter_num:  11
+iter 11: loss 1.8186, time 547.59ms
+iter_num:  12
+iter 12: loss 0.9235, time 547.58ms
+iter_num:  13
+iter 13: loss 0.9807, time 549.94ms
+iter_num:  14
+iter 14: loss 1.7154, time 552.44ms
+iter_num:  15
+iter 15: loss 0.9963, time 608.47ms
+iter_num:  16
+iter 16: loss 2.9941, time 547.57ms
+iter_num:  17
+iter 17: loss 3.3065, time 550.37ms
+iter_num:  18
+iter 18: loss 1.1172, time 544.74ms
+iter_num:  19
+iter 19: loss 0.9650, time 554.48ms
+iter_num:  20
+iter 20: loss 1.7197, time 556.01ms
+iter_num:  21
+iter 21: loss 1.7318, time 547.77ms
+iter_num:  22
+iter 22: loss 2.2037, time 555.23ms
+iter_num:  23
+iter 23: loss 1.9730, time 548.53ms
+iter_num:  24
+iter 24: loss 1.3495, time 546.92ms
+iter_num:  25
+iter 25: loss 1.3229, time 550.17ms
+iter_num:  26
+iter 26: loss 1.0532, time 553.41ms
+iter_num:  27
+iter 27: loss 1.3427, time 548.66ms
+iter_num:  28
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 292, in <module>
+    pred_onsets, pred_vel = model(audio)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1156, in forward
+    output = self._run_ddp_forward(*inputs, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1110, in _run_ddp_forward
+    return module_to_run(*inputs[0], **kwargs[0])  # type: ignore[index]
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 687, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 675, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/amp/autocast_mode.py", line 14, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/demucs/htdemucs.py", line 744, in forward
+    x = self._ispec(zout, length)
+  File "/home/robertthomas/rileyProject/demucs/demucs/htdemucs.py", line 506, in _ispec
+    x = ispectro(z, hl, length=le)
+  File "/home/robertthomas/rileyProject/demucs/demucs/spec.py", line 41, in ispectro
+    window=th.hann_window(win_length).to(z.real),
+KeyboardInterrupt

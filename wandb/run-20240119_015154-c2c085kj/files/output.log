@@ -1,0 +1,73 @@
+torch.float32 torch.float32 torch.float32
+1
+0
+1
+2
+0
+1
+2
+step 0: train loss 0.7015, val loss 0.7016
+iter 0: loss 0.6974, time 3010.61ms
+iter_num:  1
+iter 1: loss 0.7017, time 177.75ms
+iter_num:  2
+iter 2: loss 0.6995, time 104.84ms
+iter_num:  3
+iter 3: loss 0.7021, time 172.21ms
+iter_num:  4
+iter 4: loss 0.7039, time 111.10ms
+iter_num:  5
+iter 5: loss 0.6993, time 158.66ms
+iter_num:  6
+iter 6: loss 0.7002, time 108.35ms
+iter_num:  7
+iter 7: loss 0.7085, time 165.54ms
+iter_num:  8
+iter 8: loss 0.7026, time 113.50ms
+iter_num:  9
+iter 9: loss 0.7025, time 161.43ms
+iter_num:  10
+iter 10: loss 0.7040, time 107.38ms
+iter_num:  11
+iter 11: loss 0.7042, time 167.84ms
+iter_num:  12
+iter 12: loss 0.6984, time 104.70ms
+iter_num:  13
+iter 13: loss 0.7012, time 161.36ms
+iter_num:  14
+iter 14: loss 0.7039, time 109.59ms
+iter_num:  15
+iter 15: loss 0.6999, time 161.99ms
+iter_num:  16
+iter 16: loss 0.7045, time 107.57ms
+iter_num:  17
+iter 17: loss 0.6982, time 163.81ms
+iter_num:  18
+iter 18: loss 0.6975, time 108.10ms
+iter_num:  19
+iter 19: loss 0.7002, time 157.94ms
+iter_num:  20
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/wandb/sdk/lib/exit_hooks.py", line 41, in exc_handler
+    def exc_handler(
+KeyboardInterrupt
+Original exception was:
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 240, in <module>
+    for batch in train_dataloader:
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/data_loader.py", line 460, in __iter__
+    current_batch = send_to_device(current_batch, self.device)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 152, in send_to_device
+    return honor_type(
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 84, in honor_type
+    return type(obj)(generator)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 153, in <genexpr>
+    tensor, (send_to_device(t, device, non_blocking=non_blocking, skip_keys=skip_keys) for t in tensor)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 171, in send_to_device
+    return tensor.to(device, non_blocking=non_blocking)
+KeyboardInterrupt
+iter 20: loss 0.6998, time 109.63ms
+iter_num:  21
+iter 21: loss 0.7038, time 163.76ms
+iter_num:  22

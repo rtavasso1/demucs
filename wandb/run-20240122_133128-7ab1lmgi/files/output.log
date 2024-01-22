@@ -1,0 +1,30 @@
+torch.float32 torch.float32 torch.float32
+0
+1
+2
+3
+4
+5
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f6a1634f5e0>
+Traceback (most recent call last):
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1478, in __del__
+    self._shutdown_workers()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1424, in _shutdown_workers
+    self._pin_memory_thread.join()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/threading.py", line 1060, in join
+    self._wait_for_tstate_lock()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/threading.py", line 1080, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 282, in <module>
+    losses = estimate_loss()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 227, in estimate_loss
+    f1, f1_w_vel = f1_score(onset, onset_pred, velocity, velocity_pred, OaF_midi=(model_name == 'OaF'))
+  File "/home/robertthomas/rileyProject/demucs/metrics.py", line 104, in f1_score
+    estimated_onsets, estimated_velocities = extract_notes(sparse_estimated_onsets[i], sparse_estimated_velocities[i], predictions=True) # (num_onsets,), (num_onsets,)
+  File "/home/robertthomas/rileyProject/demucs/metrics.py", line 34, in extract_notes
+    if onsets[frame, pitch].item() == 1:
+KeyboardInterrupt

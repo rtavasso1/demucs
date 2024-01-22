@@ -1,0 +1,80 @@
+torch.float32 torch.float32 torch.float32
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 255, in <module>
+    losses = estimate_loss()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 201, in estimate_loss
+    f1, f1_w_vel = f1_score(onset, onset_pred, velocity, velocity_pred)
+  File "/home/robertthomas/rileyProject/demucs/metrics.py", line 75, in f1_score
+    f1_score_w_vel = mir_eval.transcription_velocity.precision_recall_f1_overlap(reference_intervals, reference_pitches, reference_velocities, estimated_intervals, estimated_pitches, estimated_velocities)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/transcription_velocity.py", line 291, in precision_recall_f1_overlap
+    matching = match_notes(
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/transcription_velocity.py", line 164, in match_notes
+    matching = transcription.match_notes(
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/transcription.py", line 461, in match_notes
+    matching = sorted(util._bipartite_match(G).items())
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/util.py", line 587, in _bipartite_match
+    pred = dict([(u, unmatched) for u in graph])
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/util.py", line 587, in <listcomp>
+    pred = dict([(u, unmatched) for u in graph])
+KeyboardInterrupt

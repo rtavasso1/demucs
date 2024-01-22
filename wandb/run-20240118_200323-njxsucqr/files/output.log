@@ -1,0 +1,31 @@
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f2a6138c4c0>
+Traceback (most recent call last):
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1478, in __del__
+    self._shutdown_workers()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1442, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 248, in <module>
+    losses = estimate_loss()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 200, in estimate_loss
+    f1, f1_w_vel = f1_score(onset, onset_pred, velocity, velocity_pred)
+  File "/home/robertthomas/rileyProject/demucs/metrics.py", line 65, in f1_score
+    f1_score = mir_eval.onset.f_measure(reference_onsets, estimated_onsets)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/onset.py", line 93, in f_measure
+    matching = util.match_events(reference_onsets, estimated_onsets, window)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/util.py", line 708, in match_events
+    matching = sorted(_bipartite_match(G).items())
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/util.py", line 612, in _bipartite_match
+    for v in graph[u]:
+KeyboardInterrupt

@@ -1,0 +1,298 @@
+1
+0
+1
+2
+0
+1
+2
+step 0: train loss 0.7015, val loss 0.7011
+iter 0: loss 0.7039, time 2960.61ms
+iter_num:  1
+iter 1: loss 0.7005, time 155.68ms
+iter_num:  2
+iter 2: loss 0.7029, time 108.70ms
+iter_num:  3
+iter 3: loss 0.6974, time 166.65ms
+iter_num:  4
+iter 4: loss 0.7005, time 107.45ms
+iter_num:  5
+iter 5: loss 0.7012, time 162.24ms
+iter_num:  6
+iter 6: loss 0.7009, time 108.16ms
+iter_num:  7
+iter 7: loss 0.7025, time 162.17ms
+iter_num:  8
+iter 8: loss 0.7059, time 109.60ms
+iter_num:  9
+iter 9: loss 0.7023, time 162.69ms
+iter_num:  10
+iter 10: loss 0.7042, time 108.24ms
+iter_num:  11
+iter 11: loss 0.7021, time 160.59ms
+iter_num:  12
+iter 12: loss 0.7024, time 109.25ms
+iter_num:  13
+iter 13: loss 0.7013, time 160.84ms
+iter_num:  14
+iter 14: loss 0.7019, time 109.33ms
+iter_num:  15
+iter 15: loss 0.7034, time 161.64ms
+iter_num:  16
+iter 16: loss 0.7012, time 107.00ms
+iter_num:  17
+iter 17: loss 0.6999, time 163.40ms
+iter_num:  18
+iter 18: loss 0.7024, time 108.39ms
+iter_num:  19
+iter 19: loss 0.7061, time 161.38ms
+iter_num:  20
+iter 20: loss 0.7036, time 108.33ms
+iter_num:  21
+iter 21: loss 0.7006, time 159.51ms
+iter_num:  22
+iter 22: loss 0.7076, time 110.00ms
+iter_num:  23
+iter 23: loss 0.7030, time 162.33ms
+iter_num:  24
+iter 24: loss 0.7004, time 107.55ms
+iter_num:  25
+iter 25: loss 0.7026, time 161.49ms
+iter_num:  26
+iter 26: loss 0.7011, time 107.97ms
+iter_num:  27
+iter 27: loss 0.7074, time 163.52ms
+iter_num:  28
+iter 28: loss 0.7013, time 111.44ms
+iter_num:  29
+iter 29: loss 0.7012, time 159.73ms
+iter_num:  30
+iter 30: loss 0.7028, time 108.49ms
+iter_num:  31
+iter 31: loss 0.7025, time 162.85ms
+iter_num:  32
+iter 32: loss 0.7018, time 110.08ms
+iter_num:  33
+iter 33: loss 0.7071, time 158.80ms
+iter_num:  34
+iter 34: loss 0.6960, time 106.74ms
+iter_num:  35
+iter 35: loss 0.7040, time 163.84ms
+iter_num:  36
+iter 36: loss 0.7023, time 107.48ms
+iter_num:  37
+iter 37: loss 0.7024, time 162.65ms
+iter_num:  38
+iter 38: loss 0.7018, time 107.04ms
+iter_num:  39
+iter 39: loss 0.7007, time 163.37ms
+iter_num:  40
+iter 40: loss 0.6998, time 106.79ms
+iter_num:  41
+iter 41: loss 0.7032, time 163.49ms
+iter_num:  42
+iter 42: loss 0.7007, time 106.69ms
+iter_num:  43
+iter 43: loss 0.7062, time 164.48ms
+iter_num:  44
+iter 44: loss 0.7013, time 108.02ms
+iter_num:  45
+iter 45: loss 0.6980, time 163.51ms
+iter_num:  46
+iter 46: loss 0.7015, time 108.43ms
+iter_num:  47
+iter 47: loss 0.7019, time 161.38ms
+iter_num:  48
+iter 48: loss 0.7000, time 105.74ms
+iter_num:  49
+iter 49: loss 0.7028, time 164.11ms
+iter_num:  50
+iter 50: loss 0.7003, time 105.67ms
+iter_num:  51
+iter 51: loss 0.7062, time 164.42ms
+iter_num:  52
+iter 52: loss 0.7042, time 107.57ms
+iter_num:  53
+iter 53: loss 0.7027, time 159.38ms
+iter_num:  54
+iter 54: loss 0.7005, time 106.58ms
+iter_num:  55
+iter 55: loss 0.7009, time 166.32ms
+iter_num:  56
+iter 56: loss 0.6998, time 105.81ms
+iter_num:  57
+iter 57: loss 0.6987, time 162.20ms
+iter_num:  58
+iter 58: loss 0.7037, time 107.74ms
+iter_num:  59
+iter 59: loss 0.7044, time 161.10ms
+iter_num:  60
+iter 60: loss 0.7006, time 107.62ms
+iter_num:  61
+iter 61: loss 0.7010, time 161.13ms
+iter_num:  62
+iter 62: loss 0.7039, time 107.49ms
+iter_num:  63
+iter 63: loss 0.7021, time 159.88ms
+iter_num:  64
+iter 64: loss 0.6996, time 106.81ms
+iter_num:  65
+iter 65: loss 0.7031, time 161.33ms
+iter_num:  66
+iter 66: loss 0.6994, time 105.94ms
+iter_num:  67
+iter 67: loss 0.7029, time 165.17ms
+iter_num:  68
+iter 68: loss 0.7011, time 108.12ms
+iter_num:  69
+iter 69: loss 0.7006, time 162.61ms
+iter_num:  70
+iter 70: loss 0.7023, time 108.49ms
+iter_num:  71
+iter 71: loss 0.7035, time 159.10ms
+iter_num:  72
+iter 72: loss 0.7001, time 107.10ms
+iter_num:  73
+iter 73: loss 0.7018, time 162.84ms
+iter_num:  74
+iter 74: loss 0.6969, time 106.27ms
+iter_num:  75
+iter 75: loss 0.7011, time 164.17ms
+iter_num:  76
+iter 76: loss 0.7015, time 108.53ms
+iter_num:  77
+iter 77: loss 0.6990, time 160.01ms
+iter_num:  78
+iter 78: loss 0.7024, time 109.79ms
+iter_num:  79
+iter 79: loss 0.7019, time 160.42ms
+iter_num:  80
+iter 80: loss 0.6999, time 107.54ms
+iter_num:  81
+iter 81: loss 0.7009, time 162.23ms
+iter_num:  82
+iter 82: loss 0.7007, time 107.27ms
+iter_num:  83
+iter 83: loss 0.7030, time 159.68ms
+iter_num:  84
+iter 84: loss 0.7023, time 107.00ms
+iter_num:  85
+iter 85: loss 0.7018, time 165.28ms
+iter_num:  86
+iter 86: loss 0.6986, time 106.95ms
+iter_num:  87
+iter 87: loss 0.7001, time 163.72ms
+iter_num:  88
+iter 88: loss 0.6982, time 106.79ms
+iter_num:  89
+iter 89: loss 0.7041, time 164.46ms
+iter_num:  90
+iter 90: loss 0.7007, time 105.04ms
+iter_num:  91
+iter 91: loss 0.7055, time 165.35ms
+iter_num:  92
+iter 92: loss 0.6995, time 106.07ms
+iter_num:  93
+iter 93: loss 0.7046, time 163.30ms
+iter_num:  94
+iter 94: loss 0.7051, time 108.96ms
+iter_num:  95
+iter 95: loss 0.7051, time 161.65ms
+iter_num:  96
+iter 96: loss 0.7011, time 105.59ms
+iter_num:  97
+iter 97: loss 0.7005, time 166.18ms
+iter_num:  98
+iter 98: loss 0.6994, time 105.91ms
+iter_num:  99
+iter 99: loss 0.7068, time 163.49ms
+iter_num:  100
+iter 100: loss 0.7000, time 107.31ms
+iter_num:  101
+iter 101: loss 0.7029, time 161.03ms
+iter_num:  102
+iter 102: loss 0.7018, time 108.19ms
+iter_num:  103
+iter 103: loss 0.7023, time 161.41ms
+iter_num:  104
+iter 104: loss 0.7010, time 108.30ms
+iter_num:  105
+iter 105: loss 0.7034, time 160.56ms
+iter_num:  106
+iter 106: loss 0.7009, time 107.83ms
+iter_num:  107
+iter 107: loss 0.7021, time 163.04ms
+iter_num:  108
+iter 108: loss 0.7001, time 106.65ms
+iter_num:  109
+iter 109: loss 0.7012, time 164.59ms
+iter_num:  110
+iter 110: loss 0.7061, time 108.62ms
+iter_num:  111
+iter 111: loss 0.7026, time 157.01ms
+iter_num:  112
+iter 112: loss 0.7020, time 105.82ms
+iter_num:  113
+iter 113: loss 0.6979, time 168.52ms
+iter_num:  114
+iter 114: loss 0.6995, time 105.85ms
+iter_num:  115
+iter 115: loss 0.7026, time 165.55ms
+iter_num:  116
+iter 116: loss 0.7017, time 107.06ms
+iter_num:  117
+iter 117: loss 0.7032, time 162.46ms
+iter_num:  118
+iter 118: loss 0.7040, time 109.47ms
+iter_num:  119
+iter 119: loss 0.7042, time 161.20ms
+iter_num:  120
+iter 120: loss 0.7017, time 106.98ms
+iter_num:  121
+iter 121: loss 0.7078, time 161.24ms
+iter_num:  122
+iter 122: loss 0.7072, time 109.77ms
+iter_num:  123
+iter 123: loss 0.7041, time 162.34ms
+iter_num:  124
+iter 124: loss 0.7073, time 108.89ms
+iter_num:  125
+iter 125: loss 0.6974, time 159.13ms
+iter_num:  126
+iter 126: loss 0.7078, time 109.78ms
+iter_num:  127
+iter 127: loss 0.6971, time 160.52ms
+iter_num:  128
+iter 128: loss 0.7027, time 106.68ms
+iter_num:  129
+iter 129: loss 0.6973, time 162.47ms
+iter_num:  130
+iter 130: loss 0.7022, time 107.76ms
+iter_num:  131
+iter 131: loss 0.7024, time 161.83ms
+iter_num:  132
+iter 132: loss 0.7035, time 107.96ms
+iter_num:  133
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 286, in <module>
+    pred_onsets, pred_vel = model(audio)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1156, in forward
+    output = self._run_ddp_forward(*inputs, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1110, in _run_ddp_forward
+    return module_to_run(*inputs[0], **kwargs[0])  # type: ignore[index]
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 687, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 675, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/amp/autocast_mode.py", line 14, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/demucs/htdemucs.py", line 744, in forward
+    x = self._ispec(zout, length)
+  File "/home/robertthomas/rileyProject/demucs/demucs/htdemucs.py", line 506, in _ispec
+    x = ispectro(z, hl, length=le)
+  File "/home/robertthomas/rileyProject/demucs/demucs/spec.py", line 41, in ispectro
+    window=th.hann_window(win_length).to(z.real),
+KeyboardInterrupt

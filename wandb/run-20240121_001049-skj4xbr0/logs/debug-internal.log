@@ -1,0 +1,19 @@
+2024-01-21 00:10:49,935 INFO    StreamThr :277017 [internal.py:wandb_internal():86] W&B internal server running at pid: 277017, started at: 2024-01-21 00:10:49.934808
+2024-01-21 00:10:49,935 DEBUG   HandlerThread:277017 [handler.py:handle_request():146] handle_request: status
+2024-01-21 00:10:49,936 INFO    WriterThread:277017 [datastore.py:open_for_write():87] open: /home/robertthomas/rileyProject/demucs/wandb/run-20240121_001049-skj4xbr0/run-skj4xbr0.wandb
+2024-01-21 00:10:49,936 DEBUG   SenderThread:277017 [sender.py:send():382] send: header
+2024-01-21 00:10:49,961 DEBUG   SenderThread:277017 [sender.py:send():382] send: run
+2024-01-21 00:10:50,029 DEBUG   HandlerThread:277017 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-21 00:10:50,029 INFO    HandlerThread:277017 [handler.py:finish():869] shutting down handler
+2024-01-21 00:10:50,293 INFO    SenderThread:277017 [dir_watcher.py:__init__():211] watching files in: /home/robertthomas/rileyProject/demucs/wandb/run-20240121_001049-skj4xbr0/files
+2024-01-21 00:10:50,293 INFO    SenderThread:277017 [sender.py:_start_run_threads():1136] run started: skj4xbr0 with start time 1705813849.934923
+2024-01-21 00:10:50,293 INFO    SenderThread:277017 [sender.py:finish():1572] shutting down sender
+2024-01-21 00:10:50,293 INFO    SenderThread:277017 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-21 00:10:50,961 INFO    WriterThread:277017 [datastore.py:close():296] close: /home/robertthomas/rileyProject/demucs/wandb/run-20240121_001049-skj4xbr0/run-skj4xbr0.wandb
+2024-01-21 00:10:51,293 INFO    SenderThread:277017 [dir_watcher.py:finish():388] scan: /home/robertthomas/rileyProject/demucs/wandb/run-20240121_001049-skj4xbr0/files
+2024-01-21 00:10:51,293 INFO    SenderThread:277017 [dir_watcher.py:finish():402] scan save: /home/robertthomas/rileyProject/demucs/wandb/run-20240121_001049-skj4xbr0/files/config.yaml config.yaml
+2024-01-21 00:10:51,293 INFO    SenderThread:277017 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-21 00:10:51,293 INFO    SenderThread:277017 [file_pusher.py:join():181] waiting for file pusher
+2024-01-21 00:10:51,525 INFO    wandb-upload_0:277017 [upload_job.py:push():131] Uploaded file /home/robertthomas/rileyProject/demucs/wandb/run-20240121_001049-skj4xbr0/files/config.yaml
+2024-01-21 00:10:51,794 INFO    SenderThread:277017 [file_stream.py:finish():595] file stream finish called
+2024-01-21 00:10:51,868 INFO    SenderThread:277017 [file_stream.py:finish():599] file stream finish is done

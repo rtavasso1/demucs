@@ -1,0 +1,930 @@
+2024-01-19 01:58:23,318 INFO    StreamThr :65681 [internal.py:wandb_internal():86] W&B internal server running at pid: 65681, started at: 2024-01-19 01:58:23.318587
+2024-01-19 01:58:23,320 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status
+2024-01-19 01:58:23,320 INFO    WriterThread:65681 [datastore.py:open_for_write():87] open: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/run-avxul86h.wandb
+2024-01-19 01:58:23,320 DEBUG   SenderThread:65681 [sender.py:send():382] send: header
+2024-01-19 01:58:23,336 DEBUG   SenderThread:65681 [sender.py:send():382] send: run
+2024-01-19 01:58:23,550 INFO    SenderThread:65681 [dir_watcher.py:__init__():211] watching files in: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files
+2024-01-19 01:58:23,550 INFO    SenderThread:65681 [sender.py:_start_run_threads():1136] run started: avxul86h with start time 1705647503.318505
+2024-01-19 01:58:23,554 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: check_version
+2024-01-19 01:58:23,554 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: check_version
+2024-01-19 01:58:23,624 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: run_start
+2024-01-19 01:58:23,640 DEBUG   HandlerThread:65681 [system_info.py:__init__():27] System info init
+2024-01-19 01:58:23,640 DEBUG   HandlerThread:65681 [system_info.py:__init__():42] System info init done
+2024-01-19 01:58:23,640 INFO    HandlerThread:65681 [system_monitor.py:start():194] Starting system monitor
+2024-01-19 01:58:23,641 INFO    SystemMonitor:65681 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-19 01:58:23,641 INFO    HandlerThread:65681 [system_monitor.py:probe():214] Collecting system info
+2024-01-19 01:58:23,641 INFO    SystemMonitor:65681 [interfaces.py:start():190] Started cpu monitoring
+2024-01-19 01:58:23,641 INFO    SystemMonitor:65681 [interfaces.py:start():190] Started disk monitoring
+2024-01-19 01:58:23,642 INFO    SystemMonitor:65681 [interfaces.py:start():190] Started gpu monitoring
+2024-01-19 01:58:23,642 INFO    SystemMonitor:65681 [interfaces.py:start():190] Started memory monitoring
+2024-01-19 01:58:23,643 INFO    SystemMonitor:65681 [interfaces.py:start():190] Started network monitoring
+2024-01-19 01:58:23,658 DEBUG   HandlerThread:65681 [system_info.py:probe():151] Probing system
+2024-01-19 01:58:23,660 DEBUG   HandlerThread:65681 [system_info.py:_probe_git():136] Probing git
+2024-01-19 01:58:23,664 DEBUG   HandlerThread:65681 [system_info.py:_probe_git():144] Probing git done
+2024-01-19 01:58:23,664 DEBUG   HandlerThread:65681 [system_info.py:probe():199] Probing system done
+2024-01-19 01:58:23,664 DEBUG   HandlerThread:65681 [system_monitor.py:probe():223] {'os': 'Linux-5.14.0-381.el9.x86_64-x86_64-with-glibc2.34', 'python': '3.9.18', 'heartbeatAt': '2024-01-19T06:58:23.658442', 'startedAt': '2024-01-19T06:58:23.316792', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/robertthomas/rileyProject/demucs/new_trainer.py', 'codePathLocal': 'new_trainer.py', 'codePath': 'new_trainer.py', 'git': {'remote': 'https://github.com/rtavasso1/demucs', 'commit': 'c88061daba9ce55ab4a19108fbee4e95125295a5'}, 'email': 'timurichk@yahoo.com', 'root': '/home/robertthomas/rileyProject/demucs', 'host': 'localhost.localdomain', 'username': 'robertthomas', 'executable': '/home/robertthomas/miniconda3/envs/demucsRiley/bin/python3.9', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 3154.4740625, 'min': 800.0, 'max': 4937.5}, 'cpu_freq_per_core': [{'current': 5443.17, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 5500.0, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}], 'disk': {'/': {'total': 69.9375, 'used': 16.512474060058594}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}, {'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 62.28952407836914}}
+2024-01-19 01:58:23,664 INFO    HandlerThread:65681 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-19 01:58:23,664 INFO    HandlerThread:65681 [system_monitor.py:probe():227] Publishing system info
+2024-01-19 01:58:23,664 DEBUG   HandlerThread:65681 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-01-19 01:58:24,404 DEBUG   HandlerThread:65681 [system_info.py:_save_conda():220] Saving conda packages done
+2024-01-19 01:58:24,405 INFO    HandlerThread:65681 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-19 01:58:24,406 DEBUG   SenderThread:65681 [sender.py:send():382] send: files
+2024-01-19 01:58:24,406 INFO    SenderThread:65681 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-19 01:58:24,408 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-19 01:58:24,408 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: python_packages
+2024-01-19 01:58:24,408 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 01:58:24,409 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 01:58:24,409 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 01:58:24,552 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/wandb-metadata.json
+2024-01-19 01:58:24,553 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/requirements.txt
+2024-01-19 01:58:24,553 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/conda-environment.yaml
+2024-01-19 01:58:24,578 DEBUG   SenderThread:65681 [sender.py:send():382] send: telemetry
+2024-01-19 01:58:24,650 INFO    wandb-upload_0:65681 [upload_job.py:push():131] Uploaded file /tmp/tmpkuk2gv8wwandb/eej8me2g-wandb-metadata.json
+2024-01-19 01:58:25,551 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:27,552 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:28,450 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:58:29,552 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:31,552 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:33,585 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:58:37,554 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:39,116 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:58:39,569 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 01:58:39,610 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 01:58:39,610 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 01:58:41,555 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:44,464 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:58:45,556 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:49,557 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:49,559 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:58:51,557 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:54,414 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 01:58:54,414 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 01:58:54,415 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 01:58:55,542 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:58:55,558 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:56,558 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/config.yaml
+2024-01-19 01:58:57,558 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:58:59,559 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:01,063 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:03,559 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:05,560 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:06,347 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:09,465 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 01:59:09,481 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 01:59:09,481 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 01:59:09,561 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:11,561 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:11,568 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:13,562 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:16,605 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:17,562 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:22,095 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:23,564 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:23,643 DEBUG   SystemMonitor:65681 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-19 01:59:23,644 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 01:59:24,500 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 01:59:24,623 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 01:59:24,624 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 01:59:25,564 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:27,711 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:29,565 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:33,565 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:33,606 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:37,566 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:38,640 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:39,424 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 01:59:39,500 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 01:59:39,500 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 01:59:41,567 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:44,494 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:45,568 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:47,568 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:49,664 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:51,569 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:53,644 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 01:59:54,496 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 01:59:54,517 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 01:59:54,517 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 01:59:54,670 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 01:59:55,569 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 01:59:59,570 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:00,628 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:03,570 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:05,678 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:07,571 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:09,504 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:00:09,640 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:00:09,641 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:00:11,102 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:11,572 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:15,573 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:16,755 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:19,574 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:22,140 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:23,575 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:23,645 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:00:24,478 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:00:24,594 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:00:24,595 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:00:27,576 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:27,997 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:31,577 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:33,574 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:33,971 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-19 02:00:33,972 DEBUG   SenderThread:65681 [sender.py:send():382] send: history
+2024-01-19 02:00:33,972 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: summary_record
+2024-01-19 02:00:33,972 INFO    SenderThread:65681 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-19 02:00:34,577 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/wandb-summary.json
+2024-01-19 02:00:35,577 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:37,578 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:38,658 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:39,478 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:00:39,578 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:39,595 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:00:39,595 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:00:41,578 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:43,579 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:44,254 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:45,579 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:47,580 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:49,580 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:49,897 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:51,581 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:53,581 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:53,645 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:00:54,478 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:00:54,595 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:00:54,595 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:00:55,499 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:00:55,582 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:57,582 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:00:59,582 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:01,129 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:01,582 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:03,583 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:05,583 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:06,726 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:07,584 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:09,560 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:01:09,584 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:09,595 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:01:09,595 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:01:12,361 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:12,585 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:14,585 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:16,585 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:17,957 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:18,586 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:20,586 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:22,587 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:23,577 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:23,645 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:01:24,560 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:01:24,587 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:24,595 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:01:24,595 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:01:26,588 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:28,588 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:29,173 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:30,588 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:32,589 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:34,589 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:34,799 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:36,590 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:38,590 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:39,560 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:01:39,595 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:01:39,595 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:01:40,395 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:40,590 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:42,591 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:44,591 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:46,015 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:46,592 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:48,592 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:50,593 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:51,613 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:52,593 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:53,646 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:01:54,560 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:01:54,593 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:54,595 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:01:54,596 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:01:56,594 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:01:57,241 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:01:58,594 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:00,595 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:02,595 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:02,829 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:04,595 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:06,596 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:08,457 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:08,596 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:09,560 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:02:09,595 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:02:09,596 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:02:10,597 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:12,598 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:14,053 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:14,598 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:16,598 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:18,599 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:19,671 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:20,599 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:22,600 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:23,646 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:02:24,570 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:02:24,595 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:02:24,596 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:02:24,600 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:24,673 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:26,600 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:28,601 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:30,199 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:30,601 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:32,602 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:34,602 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:35,800 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:36,602 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:38,603 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:39,570 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:02:39,596 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:02:39,596 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:02:40,603 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:41,428 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:42,603 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:44,604 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:46,604 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:47,024 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:48,604 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:50,605 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:52,605 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:52,650 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:53,647 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:02:54,570 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:02:54,596 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:02:54,596 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:02:54,605 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:56,606 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:02:58,249 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:02:58,607 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:00,607 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:02,608 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:03,869 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:04,608 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:06,609 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:08,609 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:09,463 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:09,571 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:03:09,596 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:03:09,596 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:03:10,610 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:12,610 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:14,611 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:15,084 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:16,611 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:18,611 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:20,612 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:20,682 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:22,612 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:23,647 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:03:24,571 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:03:24,596 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:03:24,596 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:03:24,613 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:26,307 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:26,613 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:28,614 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:30,614 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:31,908 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:32,615 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:34,615 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:36,615 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:37,532 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:38,616 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:39,625 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:03:39,625 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:03:39,625 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:03:40,616 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:42,617 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:43,125 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:44,617 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:46,618 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:48,618 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:48,758 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:50,619 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:52,619 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:53,648 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:03:54,357 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:03:54,620 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:54,625 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:03:54,625 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:03:54,626 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:03:56,620 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:58,621 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:03:59,980 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:00,621 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:02,622 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:04,622 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:05,576 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:06,623 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:08,623 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:09,625 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:04:09,626 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:04:09,626 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:04:10,624 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:11,202 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:12,624 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:14,625 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:16,625 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:16,790 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:18,625 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:20,626 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:22,412 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:22,626 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:23,648 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:04:24,626 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:04:24,626 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:04:24,626 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:04:24,628 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:26,629 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:28,016 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:28,629 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:30,629 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:32,630 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:33,642 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:34,630 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:36,631 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:38,631 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:39,229 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:39,625 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:04:39,626 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:04:39,626 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:04:40,632 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:42,632 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:44,633 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:44,863 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:46,633 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:48,634 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:50,461 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:50,635 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:52,635 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:53,648 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:04:54,636 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:54,687 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:04:54,688 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:04:54,688 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:04:56,086 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:04:56,636 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:04:58,637 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:00,637 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:01,680 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:02,638 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:04,638 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:06,639 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:07,316 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:08,639 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:09,688 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:05:09,688 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:05:09,689 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:05:10,639 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:12,640 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:12,913 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:14,641 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:16,641 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:18,540 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:18,642 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:20,642 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:22,643 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:23,649 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:05:23,649 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:24,643 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:24,688 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:05:24,688 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:05:24,689 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:05:26,644 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:28,644 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:29,067 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:30,645 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:32,645 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:34,646 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:34,667 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:36,646 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:38,647 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:39,688 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:05:39,688 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:05:39,690 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:05:39,754 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:40,647 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:42,648 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:44,648 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:45,193 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:46,649 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:48,649 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:50,650 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:50,824 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:52,650 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:53,649 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:05:54,651 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:54,688 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:05:54,688 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:05:54,689 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:05:56,421 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:05:56,651 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:05:58,652 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:00,652 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:02,050 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:02,652 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:04,653 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:06,653 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:07,643 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:08,654 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:09,743 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:06:09,743 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:06:09,744 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:06:10,654 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:12,655 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:13,273 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:14,655 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:16,656 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:18,656 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:18,865 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:20,656 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:22,657 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:23,650 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:06:24,493 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:24,657 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:24,743 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:06:24,743 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:06:24,744 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:06:26,658 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:28,658 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:30,088 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:30,659 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:32,659 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:34,660 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:35,718 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:36,660 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:38,661 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:39,743 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:06:39,744 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:06:39,744 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:06:40,661 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:41,312 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:42,662 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:44,662 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:46,663 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:46,945 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:48,663 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:50,664 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:52,544 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:52,664 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:53,650 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:06:54,665 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:54,744 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:06:54,744 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:06:54,744 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:06:56,665 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:06:58,170 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:06:58,666 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:00,666 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:02,667 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:03,764 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:04,667 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:06,667 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:08,668 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:09,394 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:09,744 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:07:09,744 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:07:09,744 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:07:10,668 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:12,669 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:14,669 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:14,996 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:16,670 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:18,670 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:20,623 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:20,671 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:22,671 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:23,650 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:07:24,672 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:24,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:07:24,823 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:07:24,824 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:07:26,228 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:26,672 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:28,673 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:30,673 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:31,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:32,673 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:34,674 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:36,674 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:37,453 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:38,675 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:39,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:07:39,823 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:07:39,824 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:07:40,675 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:42,676 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:43,083 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:44,676 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:46,676 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:48,677 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:48,685 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:50,677 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:52,678 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:53,651 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:07:54,310 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:07:54,678 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:54,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:07:54,823 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:07:54,824 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:07:56,679 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:58,679 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:07:59,913 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:00,679 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:02,680 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:04,680 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:05,544 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:06,681 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:08,681 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:09,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:08:09,823 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:08:09,824 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:08:10,681 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:11,144 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:12,682 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:14,682 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:16,683 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:16,772 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:18,683 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:20,684 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:22,372 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:22,684 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:23,652 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:08:24,684 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:24,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:08:24,823 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:08:24,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:08:26,685 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:28,004 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:28,685 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:30,686 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:32,686 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:33,608 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:34,687 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:36,687 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:38,688 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:39,239 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:39,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:08:39,823 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:08:39,824 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:08:40,688 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:42,688 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:44,689 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:44,841 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:46,689 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:48,690 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:50,467 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:50,690 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:52,690 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:53,652 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:08:54,691 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:54,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:08:54,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:08:54,824 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:08:56,069 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:08:56,691 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:08:58,692 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:00,692 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:01,703 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:02,693 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:04,693 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:06,694 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:07,304 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:08,694 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:09,823 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:09:09,824 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:09:09,825 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:09:10,695 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:12,695 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:12,928 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:14,695 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:16,696 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:18,525 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:18,696 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:20,699 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:22,699 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:23,652 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:09:23,653 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:24,699 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:24,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:09:24,853 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:09:24,853 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:09:26,700 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:28,700 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:29,050 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:30,701 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:32,701 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:34,678 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:34,702 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:36,702 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:38,703 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:39,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:09:39,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:09:39,852 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:09:39,955 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:40,703 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:42,703 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:44,704 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:45,207 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:46,704 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:48,705 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:50,705 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:50,816 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:52,706 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:53,653 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:09:54,706 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:54,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:09:54,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:09:54,852 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:09:56,452 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:09:56,707 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:09:58,707 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:00,707 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:02,055 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:02,708 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:04,708 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:06,709 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:07,681 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:08,710 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:09,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:10:09,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:10:09,853 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:10:10,710 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:12,711 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:13,281 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:14,711 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:16,711 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:18,712 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:18,911 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:20,712 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:22,713 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:23,653 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:10:24,515 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:24,713 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:24,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:10:24,852 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:10:24,853 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:10:26,714 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:28,714 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:30,144 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:30,714 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:32,715 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:34,716 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:35,741 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:36,716 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:38,716 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:39,940 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:10:39,941 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:10:39,941 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:10:40,717 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:41,372 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:42,717 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:44,718 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:46,718 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:46,967 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:48,719 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:50,719 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:52,596 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:52,719 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:53,654 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:10:54,720 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:54,940 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:10:54,941 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:10:54,941 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:10:56,720 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:10:58,186 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:10:58,721 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:00,721 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:02,722 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:03,812 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:04,722 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:06,723 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:08,723 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:09,408 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:09,940 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:11:09,941 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:11:09,941 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:11:10,724 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:12,724 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:14,725 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:15,041 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:16,725 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:18,726 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:20,641 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:20,726 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:22,727 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:23,654 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:11:24,727 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:24,940 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:11:24,941 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:11:24,942 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:11:26,271 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:26,728 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:28,728 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:30,728 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:31,870 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:32,729 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:34,729 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:36,730 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:37,497 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:38,730 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:39,940 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:11:39,941 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:11:39,942 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:11:40,731 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:42,731 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:43,093 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:44,732 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:46,732 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:48,727 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:48,732 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:50,733 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:52,733 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:53,655 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:11:54,315 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:11:54,734 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:55,015 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:11:55,057 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:11:55,057 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:11:56,734 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:58,735 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:11:59,948 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:12:00,735 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:02,736 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:04,736 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:05,545 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:12:06,737 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:08,737 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:10,016 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:12:10,017 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:12:10,017 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:12:10,738 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:11,171 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:12:12,738 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:14,738 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:16,739 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:16,775 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:12:18,739 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:20,740 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:22,402 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:12:22,740 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:23,655 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:12:24,741 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:25,015 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:12:25,017 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-19 02:12:25,017 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: stop_status
+2024-01-19 02:12:26,741 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:27,324 DEBUG   SenderThread:65681 [sender.py:send():382] send: exit
+2024-01-19 02:12:27,324 INFO    SenderThread:65681 [sender.py:send_exit():589] handling exit code: 255
+2024-01-19 02:12:27,324 INFO    SenderThread:65681 [sender.py:send_exit():591] handling runtime: 843
+2024-01-19 02:12:27,325 INFO    SenderThread:65681 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-19 02:12:27,325 INFO    SenderThread:65681 [sender.py:send_exit():597] send defer
+2024-01-19 02:12:27,325 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:27,325 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-19 02:12:27,325 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:27,325 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-01-19 02:12:27,325 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 1
+2024-01-19 02:12:27,325 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:27,325 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-19 02:12:27,325 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:27,325 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-01-19 02:12:27,325 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 2
+2024-01-19 02:12:27,325 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:27,325 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-19 02:12:27,325 INFO    HandlerThread:65681 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-19 02:12:27,325 DEBUG   SystemMonitor:65681 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-19 02:12:27,325 INFO    HandlerThread:65681 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-19 02:12:27,326 DEBUG   SystemMonitor:65681 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-19 02:12:27,326 INFO    HandlerThread:65681 [interfaces.py:finish():202] Joined disk monitor
+2024-01-19 02:12:27,367 INFO    HandlerThread:65681 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-19 02:12:27,367 INFO    HandlerThread:65681 [interfaces.py:finish():202] Joined memory monitor
+2024-01-19 02:12:27,367 INFO    HandlerThread:65681 [interfaces.py:finish():202] Joined network monitor
+2024-01-19 02:12:27,368 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:27,368 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-01-19 02:12:27,368 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 3
+2024-01-19 02:12:27,368 DEBUG   SenderThread:65681 [sender.py:send():382] send: stats
+2024-01-19 02:12:27,368 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:27,368 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-19 02:12:27,368 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:27,368 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-01-19 02:12:27,368 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 4
+2024-01-19 02:12:27,369 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:27,369 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-19 02:12:27,369 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:27,369 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-01-19 02:12:27,369 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 5
+2024-01-19 02:12:27,369 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:27,369 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-19 02:12:27,369 DEBUG   SenderThread:65681 [sender.py:send():382] send: summary
+2024-01-19 02:12:27,369 INFO    SenderThread:65681 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-19 02:12:27,369 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:27,370 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-01-19 02:12:27,370 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 6
+2024-01-19 02:12:27,370 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:27,370 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-19 02:12:27,370 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:27,370 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-01-19 02:12:27,370 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 7
+2024-01-19 02:12:27,370 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: status_report
+2024-01-19 02:12:27,370 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:27,370 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-19 02:12:27,370 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:27,370 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-01-19 02:12:27,741 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/wandb-summary.json
+2024-01-19 02:12:28,324 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-19 02:12:28,742 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:29,327 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 8
+2024-01-19 02:12:29,327 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: poll_exit
+2024-01-19 02:12:29,327 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:29,327 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-19 02:12:29,327 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:29,327 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-01-19 02:12:29,327 INFO    SenderThread:65681 [job_builder.py:build():296] Attempting to build job artifact
+2024-01-19 02:12:29,328 INFO    SenderThread:65681 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-01-19 02:12:29,336 INFO    SenderThread:65681 [job_builder.py:build():402] adding wandb-job metadata file
+2024-01-19 02:12:29,337 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 9
+2024-01-19 02:12:29,337 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:29,337 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-19 02:12:29,337 DEBUG   SenderThread:65681 [sender.py:send():382] send: artifact
+2024-01-19 02:12:29,621 INFO    SenderThread:65681 [sender.py:send_artifact():1494] sent artifact job-https___github.com_rtavasso1_demucs_new_trainer.py - {'id': 'QXJ0aWZhY3Q6Njk1ODQ4MTcy', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzMTY4MTk3MQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6Njk1ODQ4MTcy', 'versionIndex': 2}}}
+2024-01-19 02:12:29,621 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:29,621 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-01-19 02:12:29,621 INFO    SenderThread:65681 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-19 02:12:29,742 INFO    Thread-12 :65681 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:29,742 INFO    SenderThread:65681 [dir_watcher.py:finish():388] scan: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files
+2024-01-19 02:12:29,742 INFO    SenderThread:65681 [dir_watcher.py:finish():402] scan save: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/config.yaml config.yaml
+2024-01-19 02:12:29,743 INFO    SenderThread:65681 [dir_watcher.py:finish():402] scan save: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/conda-environment.yaml conda-environment.yaml
+2024-01-19 02:12:29,743 INFO    SenderThread:65681 [dir_watcher.py:finish():402] scan save: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/wandb-metadata.json wandb-metadata.json
+2024-01-19 02:12:29,743 INFO    SenderThread:65681 [dir_watcher.py:finish():402] scan save: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/requirements.txt requirements.txt
+2024-01-19 02:12:29,743 INFO    SenderThread:65681 [dir_watcher.py:finish():402] scan save: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log output.log
+2024-01-19 02:12:29,743 INFO    SenderThread:65681 [dir_watcher.py:finish():402] scan save: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/wandb-summary.json wandb-summary.json
+2024-01-19 02:12:29,745 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 10
+2024-01-19 02:12:29,746 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:29,746 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 10
+2024-01-19 02:12:29,747 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:29,748 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-01-19 02:12:29,748 INFO    SenderThread:65681 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-19 02:12:29,935 INFO    wandb-upload_0:65681 [upload_job.py:push():131] Uploaded file /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/conda-environment.yaml
+2024-01-19 02:12:29,967 INFO    wandb-upload_2:65681 [upload_job.py:push():131] Uploaded file /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/requirements.txt
+2024-01-19 02:12:29,969 INFO    wandb-upload_1:65681 [upload_job.py:push():131] Uploaded file /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/config.yaml
+2024-01-19 02:12:29,985 INFO    wandb-upload_4:65681 [upload_job.py:push():131] Uploaded file /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/wandb-summary.json
+2024-01-19 02:12:30,002 INFO    wandb-upload_3:65681 [upload_job.py:push():131] Uploaded file /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/files/output.log
+2024-01-19 02:12:30,203 INFO    Thread-11 :65681 [sender.py:transition_state():617] send defer: 11
+2024-01-19 02:12:30,203 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:30,203 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 11
+2024-01-19 02:12:30,203 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:30,203 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-01-19 02:12:30,203 INFO    SenderThread:65681 [file_pusher.py:join():181] waiting for file pusher
+2024-01-19 02:12:30,203 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 12
+2024-01-19 02:12:30,203 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:30,204 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 12
+2024-01-19 02:12:30,204 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:30,204 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-01-19 02:12:30,204 INFO    SenderThread:65681 [file_stream.py:finish():595] file stream finish called
+2024-01-19 02:12:30,326 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-19 02:12:30,390 INFO    SenderThread:65681 [file_stream.py:finish():599] file stream finish is done
+2024-01-19 02:12:30,390 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 13
+2024-01-19 02:12:30,390 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: poll_exit
+2024-01-19 02:12:30,390 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:30,390 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 13
+2024-01-19 02:12:30,391 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:30,391 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-01-19 02:12:30,391 INFO    SenderThread:65681 [sender.py:transition_state():617] send defer: 14
+2024-01-19 02:12:30,391 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: defer
+2024-01-19 02:12:30,391 INFO    HandlerThread:65681 [handler.py:handle_request_defer():172] handle defer: 14
+2024-01-19 02:12:30,391 DEBUG   SenderThread:65681 [sender.py:send():382] send: final
+2024-01-19 02:12:30,391 DEBUG   SenderThread:65681 [sender.py:send():382] send: footer
+2024-01-19 02:12:30,391 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: defer
+2024-01-19 02:12:30,391 INFO    SenderThread:65681 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-01-19 02:12:30,392 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-19 02:12:30,392 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-19 02:12:30,392 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: server_info
+2024-01-19 02:12:30,392 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: get_summary
+2024-01-19 02:12:30,392 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: sampled_history
+2024-01-19 02:12:30,392 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-19 02:12:30,392 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: poll_exit
+2024-01-19 02:12:30,392 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: poll_exit
+2024-01-19 02:12:30,392 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: server_info
+2024-01-19 02:12:30,394 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: job_info
+2024-01-19 02:12:30,451 DEBUG   SenderThread:65681 [sender.py:send_request():409] send_request: job_info
+2024-01-19 02:12:30,452 INFO    MainThread:65681 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-01-19 02:12:30,452 INFO    MainThread:65681 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-01-19 02:12:30,452 INFO    MainThread:65681 [wandb_run.py:_footer_sync_info():3816] logging synced files
+2024-01-19 02:12:30,452 DEBUG   HandlerThread:65681 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-19 02:12:30,452 INFO    HandlerThread:65681 [handler.py:finish():869] shutting down handler
+2024-01-19 02:12:31,394 INFO    WriterThread:65681 [datastore.py:close():296] close: /home/robertthomas/rileyProject/demucs/wandb/run-20240119_015823-avxul86h/run-avxul86h.wandb
+2024-01-19 02:12:31,452 INFO    SenderThread:65681 [sender.py:finish():1572] shutting down sender
+2024-01-19 02:12:31,452 INFO    SenderThread:65681 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-19 02:12:31,452 INFO    SenderThread:65681 [file_pusher.py:join():181] waiting for file pusher

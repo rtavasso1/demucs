@@ -1,0 +1,33 @@
+torch.float32 torch.float32 torch.float32
+0
+1
+2
+3
+4
+5
+0
+1
+2
+3
+4
+5
+step 0: train loss 1.4326, val loss 2.3798
+iter 0: loss 1.5771, time 33916.01ms
+iter_num:  1
+iter 1: loss 1.4194, time 1203.60ms
+iter_num:  2
+iter 2: loss 3.5379, time 700.86ms
+iter_num:  3
+iter 3: loss 1.5608, time 708.82ms
+iter_num:  4
+iter 4: loss 1.5834, time 713.91ms
+iter_num:  5
+iter 5: loss 2.3188, time 713.93ms
+iter_num:  6
+iter 6: loss 2.4069, time 716.38ms
+iter_num:  7
+iter 7: loss 0.9379, time 711.34ms
+iter_num:  8
+iter 8: loss 0.9478, time 716.75ms
+iter_num:  9
+iter 9: loss 1.8242, time 711.05ms

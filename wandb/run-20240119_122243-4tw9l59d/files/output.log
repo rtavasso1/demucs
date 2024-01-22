@@ -1,0 +1,124 @@
+torch.float32 torch.float32 torch.float32
+0
+1
+2
+3
+4
+5
+0
+1
+2
+3
+4
+5
+step 0: train loss 1.0639, val loss 1.8223
+iter 0: loss 1.4871, time 31210.54ms
+iter_num:  1
+iter 1: loss 1.7567, time 1202.41ms
+iter_num:  2
+iter 2: loss 0.8546, time 716.54ms
+iter_num:  3
+iter 3: loss 1.6795, time 725.69ms
+iter_num:  4
+iter 4: loss 1.9667, time 715.17ms
+iter_num:  5
+iter 5: loss 1.6792, time 718.38ms
+iter_num:  6
+iter 6: loss 0.9814, time 712.67ms
+iter_num:  7
+iter 7: loss 0.9062, time 716.89ms
+iter_num:  8
+iter 8: loss 1.0512, time 722.47ms
+iter_num:  9
+iter 9: loss 1.5042, time 715.59ms
+iter_num:  10
+iter 10: loss 1.0275, time 715.70ms
+iter_num:  11
+iter 11: loss 2.5230, time 721.54ms
+iter_num:  12
+iter 12: loss 1.8544, time 714.02ms
+iter_num:  13
+iter 13: loss 1.1725, time 716.98ms
+iter_num:  14
+iter 14: loss 1.1897, time 714.56ms
+iter_num:  15
+iter 15: loss 2.0533, time 781.35ms
+iter_num:  16
+iter 16: loss 1.8566, time 709.76ms
+iter_num:  17
+iter 17: loss 0.8030, time 712.62ms
+iter_num:  18
+iter 18: loss 1.1262, time 721.82ms
+iter_num:  19
+iter 19: loss 0.8604, time 708.92ms
+iter_num:  20
+iter 20: loss 0.8952, time 721.21ms
+iter_num:  21
+iter 21: loss 1.4257, time 720.56ms
+iter_num:  22
+iter 22: loss 0.8779, time 712.61ms
+iter_num:  23
+iter 23: loss 1.1603, time 717.82ms
+iter_num:  24
+iter 24: loss 0.8435, time 715.30ms
+iter_num:  25
+iter 25: loss 2.1625, time 718.08ms
+iter_num:  26
+iter 26: loss 2.0470, time 716.54ms
+iter_num:  27
+iter 27: loss 0.8376, time 713.35ms
+iter_num:  28
+iter 28: loss 0.8663, time 712.49ms
+iter_num:  29
+iter 29: loss 1.3208, time 712.60ms
+iter_num:  30
+iter 30: loss 1.8440, time 718.73ms
+iter_num:  31
+iter 31: loss 2.1228, time 745.32ms
+iter_num:  32
+iter 32: loss 0.9469, time 709.35ms
+iter_num:  33
+iter 33: loss 0.8548, time 711.57ms
+iter_num:  34
+iter 34: loss 1.4583, time 716.39ms
+iter_num:  35
+iter 35: loss 1.4887, time 710.33ms
+iter_num:  36
+iter 36: loss 2.7218, time 717.95ms
+iter_num:  37
+iter 37: loss 0.8264, time 712.92ms
+iter_num:  38
+iter 38: loss 1.3373, time 715.56ms
+iter_num:  39
+iter 39: loss 1.0727, time 711.55ms
+iter_num:  40
+iter 40: loss 1.3228, time 715.83ms
+iter_num:  41
+iter 41: loss 1.5741, time 721.02ms
+iter_num:  42
+iter 42: loss 1.1842, time 716.26ms
+iter_num:  43
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 290, in <module>
+    pred_onsets, pred_vel = model(audio)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1156, in forward
+    output = self._run_ddp_forward(*inputs, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1110, in _run_ddp_forward
+    return module_to_run(*inputs[0], **kwargs[0])  # type: ignore[index]
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 687, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/accelerate/utils/operations.py", line 675, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/amp/autocast_mode.py", line 14, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/demucs/htdemucs.py", line 744, in forward
+    x = self._ispec(zout, length)
+  File "/home/robertthomas/rileyProject/demucs/demucs/htdemucs.py", line 506, in _ispec
+    x = ispectro(z, hl, length=le)
+  File "/home/robertthomas/rileyProject/demucs/demucs/spec.py", line 41, in ispectro
+    window=th.hann_window(win_length).to(z.real),
+KeyboardInterrupt

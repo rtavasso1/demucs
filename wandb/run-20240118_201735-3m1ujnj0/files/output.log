@@ -1,0 +1,130 @@
+1
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+1.1
+1.2
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7fa7fabcd550>
+Traceback (most recent call last):
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1478, in __del__
+    self._shutdown_workers()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1423, in _shutdown_workers
+    self._worker_result_queue.put((None, None))
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/multiprocessing/queues.py", line 94, in put
+    self._start_thread()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/multiprocessing/queues.py", line 177, in _start_thread
+    self._thread.start()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/threading.py", line 899, in start
+    _start_new_thread(self._bootstrap, ())
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 252, in <module>
+    losses = estimate_loss()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 203, in estimate_loss
+    f1, f1_w_vel = f1_score(onset, onset_pred, velocity, velocity_pred)
+  File "/home/robertthomas/rileyProject/demucs/metrics.py", line 75, in f1_score
+    f1_score_w_vel = mir_eval.transcription_velocity.precision_recall_f1_overlap(reference_intervals, reference_pitches, reference_velocities, estimated_intervals, estimated_pitches, estimated_velocities)
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/transcription_velocity.py", line 291, in precision_recall_f1_overlap
+    matching = match_notes(
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/transcription_velocity.py", line 164, in match_notes
+    matching = transcription.match_notes(
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/mir_eval/transcription.py", line 423, in match_notes
+    onset_hit_matrix = cmp_func(onset_distances, onset_tolerance)
+KeyboardInterrupt

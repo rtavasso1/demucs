@@ -1,0 +1,12 @@
+torch.float32 torch.float32 torch.float32
+0
+Traceback (most recent call last):
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 282, in <module>
+    losses = estimate_loss()
+  File "/home/robertthomas/miniconda3/envs/demucsRiley/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/robertthomas/rileyProject/demucs/new_trainer.py", line 227, in estimate_loss
+    f1, f1_w_vel = f1_score(onset, onset_pred, velocity, velocity_pred)
+  File "/home/robertthomas/rileyProject/demucs/metrics.py", line 84, in f1_score
+    estimated_onsets, estimated_velocities = sparse_to_dense(estimated_onsets, estimated_velocities, predictions=True) # (num_onsets,), (num_onsets,)
+UnboundLocalError: local variable 'estimated_onsets' referenced before assignment

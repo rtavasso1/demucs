@@ -23,6 +23,8 @@ from .spec import spectro, ispectro
 def pad1d(x: torch.Tensor, paddings: tp.Tuple[int, int], mode: str = 'constant', value: float = 0.):
     """Tiny wrapper around F.pad, just to allow for reflect padding on small input.
     If this is the case, we insert extra 0 padding to the right before the reflection happen."""
+    #original_dtype = x.dtype  # Store original data type
+    #print(original_dtype)
     x0 = x
     length = x.shape[-1]
     padding_left, padding_right = paddings

@@ -1,0 +1,52 @@
+2024-01-18 19:57:46,937 INFO    StreamThr :42500 [internal.py:wandb_internal():86] W&B internal server running at pid: 42500, started at: 2024-01-18 19:57:46.937211
+2024-01-18 19:57:46,939 DEBUG   HandlerThread:42500 [handler.py:handle_request():146] handle_request: status
+2024-01-18 19:57:46,939 INFO    WriterThread:42500 [datastore.py:open_for_write():87] open: /home/robertthomas/rileyProject/demucs/wandb/run-20240118_195746-0v024ohn/run-0v024ohn.wandb
+2024-01-18 19:57:46,939 DEBUG   SenderThread:42500 [sender.py:send():382] send: header
+2024-01-18 19:57:46,955 DEBUG   SenderThread:42500 [sender.py:send():382] send: run
+2024-01-18 19:57:47,110 INFO    SenderThread:42500 [dir_watcher.py:__init__():211] watching files in: /home/robertthomas/rileyProject/demucs/wandb/run-20240118_195746-0v024ohn/files
+2024-01-18 19:57:47,110 INFO    SenderThread:42500 [sender.py:_start_run_threads():1136] run started: 0v024ohn with start time 1705625866.937175
+2024-01-18 19:57:47,114 DEBUG   HandlerThread:42500 [handler.py:handle_request():146] handle_request: check_version
+2024-01-18 19:57:47,114 DEBUG   SenderThread:42500 [sender.py:send_request():409] send_request: check_version
+2024-01-18 19:57:47,187 DEBUG   HandlerThread:42500 [handler.py:handle_request():146] handle_request: run_start
+2024-01-18 19:57:47,203 DEBUG   HandlerThread:42500 [system_info.py:__init__():27] System info init
+2024-01-18 19:57:47,203 DEBUG   HandlerThread:42500 [system_info.py:__init__():42] System info init done
+2024-01-18 19:57:47,203 INFO    HandlerThread:42500 [system_monitor.py:start():194] Starting system monitor
+2024-01-18 19:57:47,203 INFO    SystemMonitor:42500 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-18 19:57:47,204 INFO    HandlerThread:42500 [system_monitor.py:probe():214] Collecting system info
+2024-01-18 19:57:47,204 INFO    SystemMonitor:42500 [interfaces.py:start():190] Started cpu monitoring
+2024-01-18 19:57:47,204 INFO    SystemMonitor:42500 [interfaces.py:start():190] Started disk monitoring
+2024-01-18 19:57:47,205 INFO    SystemMonitor:42500 [interfaces.py:start():190] Started gpu monitoring
+2024-01-18 19:57:47,205 INFO    SystemMonitor:42500 [interfaces.py:start():190] Started memory monitoring
+2024-01-18 19:57:47,206 INFO    SystemMonitor:42500 [interfaces.py:start():190] Started network monitoring
+2024-01-18 19:57:47,224 DEBUG   HandlerThread:42500 [system_info.py:probe():151] Probing system
+2024-01-18 19:57:47,226 DEBUG   HandlerThread:42500 [system_info.py:_probe_git():136] Probing git
+2024-01-18 19:57:47,230 DEBUG   HandlerThread:42500 [system_info.py:_probe_git():144] Probing git done
+2024-01-18 19:57:47,231 DEBUG   HandlerThread:42500 [system_info.py:probe():199] Probing system done
+2024-01-18 19:57:47,231 DEBUG   HandlerThread:42500 [system_monitor.py:probe():223] {'os': 'Linux-5.14.0-381.el9.x86_64-x86_64-with-glibc2.34', 'python': '3.9.18', 'heartbeatAt': '2024-01-19T00:57:47.224383', 'startedAt': '2024-01-19T00:57:46.935095', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/robertthomas/rileyProject/demucs/new_trainer.py', 'codePathLocal': 'new_trainer.py', 'codePath': 'new_trainer.py', 'git': {'remote': 'https://github.com/rtavasso1/demucs', 'commit': 'c88061daba9ce55ab4a19108fbee4e95125295a5'}, 'email': 'timurichk@yahoo.com', 'root': '/home/robertthomas/rileyProject/demucs', 'host': 'localhost.localdomain', 'username': 'robertthomas', 'executable': '/home/robertthomas/miniconda3/envs/demucsRiley/bin/python3.9', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 3159.42734375, 'min': 800.0, 'max': 4937.5}, 'cpu_freq_per_core': [{'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 5495.011, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 5401.182, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 5476.147, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}], 'disk': {'/': {'total': 69.9375, 'used': 16.50875473022461}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}, {'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 62.28952407836914}}
+2024-01-18 19:57:47,231 INFO    HandlerThread:42500 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-18 19:57:47,231 INFO    HandlerThread:42500 [system_monitor.py:probe():227] Publishing system info
+2024-01-18 19:57:47,231 DEBUG   HandlerThread:42500 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-01-18 19:57:47,972 DEBUG   HandlerThread:42500 [system_info.py:_save_conda():220] Saving conda packages done
+2024-01-18 19:57:47,973 INFO    HandlerThread:42500 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-18 19:57:47,974 DEBUG   SenderThread:42500 [sender.py:send():382] send: files
+2024-01-18 19:57:47,974 INFO    SenderThread:42500 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-18 19:57:47,976 DEBUG   HandlerThread:42500 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-18 19:57:47,977 DEBUG   SenderThread:42500 [sender.py:send_request():409] send_request: python_packages
+2024-01-18 19:57:47,977 DEBUG   HandlerThread:42500 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-18 19:57:47,977 DEBUG   HandlerThread:42500 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-18 19:57:47,977 DEBUG   SenderThread:42500 [sender.py:send():382] send: telemetry
+2024-01-18 19:57:47,977 DEBUG   SenderThread:42500 [sender.py:send_request():409] send_request: stop_status
+2024-01-18 19:57:48,112 INFO    Thread-12 :42500 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240118_195746-0v024ohn/files/wandb-metadata.json
+2024-01-18 19:57:48,112 INFO    Thread-12 :42500 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240118_195746-0v024ohn/files/conda-environment.yaml
+2024-01-18 19:57:48,112 INFO    Thread-12 :42500 [dir_watcher.py:_on_file_created():271] file/dir created: /home/robertthomas/rileyProject/demucs/wandb/run-20240118_195746-0v024ohn/files/requirements.txt
+2024-01-18 19:57:48,250 INFO    wandb-upload_0:42500 [upload_job.py:push():131] Uploaded file /tmp/tmp00qaw3gawandb/dx7xax4x-wandb-metadata.json
+2024-01-18 19:57:52,128 DEBUG   HandlerThread:42500 [handler.py:handle_request():146] handle_request: status_report
+2024-01-18 19:57:55,208 INFO    cpu       :42500 [interfaces.py:monitor():140] Process cpu has exited.
+2024-01-18 19:57:55,209 DEBUG   SystemMonitor:42500 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-18 19:57:55,209 DEBUG   SystemMonitor:42500 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-18 19:57:55,209 DEBUG   SystemMonitor:42500 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-18 19:57:55,210 INFO    memory    :42500 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2024-01-18 19:57:55,210 DEBUG   SenderThread:42500 [sender.py:send():382] send: stats
+2024-01-18 19:57:55,948 WARNING StreamThr :42500 [internal.py:is_dead():414] Internal process exiting, parent pid 42272 disappeared
+2024-01-18 19:57:55,949 ERROR   StreamThr :42500 [internal.py:wandb_internal():152] Internal process shutdown.
+2024-01-18 19:57:56,148 INFO    MainThread:42500 [internal.py:handle_exit():76] Internal process exited
