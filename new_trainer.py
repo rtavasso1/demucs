@@ -38,7 +38,7 @@ from metrics import f1_score
 out_dir = 'out'
 eval_interval = 2000
 log_interval = 1
-eval_iters = 2
+eval_iters = 1
 always_save_checkpoint = True # if True, always save a checkpoint after each eval
 init_from = 'scratch' # 'scratch' or 'resume''
 eval_only = False # if True, only run eval loop
@@ -50,7 +50,7 @@ wandb_run_name = model_name + str(time.time()) # 'run' + str(time.time())
 # data
 dataset = 'e-gmd-v1.0.0'
 gradient_accumulation_steps = 16 # used to simulate larger batch sizes (HTDemucs uses batch size of 32)
-batch_size = 8 # if gradient_accumulation_steps > 1, this is the micro-batch size
+batch_size = 2 # if gradient_accumulation_steps > 1, this is the micro-batch size
 sample_rate = 44100 # Hz
 sample_length = 12 # s
 block_size = sample_rate * sample_length # number of samples in a block
@@ -104,9 +104,10 @@ ptdtype = {'float32': torch.float32, 'bfloat16': torch.bfloat16, 'float16': torc
 
 # poor man's data loader
 train_data = AudioMIDIDataset('../data/e-gmd-v1.0.0', sample_length=sample_length, eval=False, OaF_midi=(model_name == 'OaF'))
-train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True, prefetch_factor=1)
+train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
 val_data = AudioMIDIDataset('../data/e-gmd-v1.0.0', sample_length=sample_length, eval=True, OaF_midi=(model_name == 'OaF'))
-val_dataloader = DataLoader(val_data, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True, prefetch_factor=1)
+val_dataloader = DataLoader(val_data, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
+accelerator.wait_for_everyone()
 
 # init these up here, can override if init_from='resume' (i.e. from a checkpoint)
 iter_num = 0
@@ -254,7 +255,9 @@ if wandb_log and master_process:
     wandb.init(project=wandb_project, name=wandb_run_name, config=config)
 
 accelerator.wait_for_everyone()
-
+if str(accelerator.device) == 'cuda:1':
+    pass
+    # time.sleep(10)
 # training loop
 model.train()
 t0 = time.time()
@@ -277,49 +280,53 @@ while True:
                     param_group['lr'] = lr
 
                 # evaluate the loss on train/val sets and write checkpoints
-                if iter_num % eval_interval == 0:
-                    if master_process:
-                        losses = estimate_loss()
-                        
-                        print(f"step {iter_num}: train loss {losses['train']['Loss']:.4f}, val loss {losses['val']['Loss']:.4f}")
-                        if wandb_log:
-                            wandb.log({
-                                "iter": iter_num,
-                                "train/loss": losses['train']['Loss'],
-                                "val/loss": losses['val']['Loss'],
-                                "train/f1": losses['train']['F1'],
-                                "val/f1": losses['val']['F1'],
-                                "train/f1_w_vel": losses['train']['F1 w/ Vel'],
-                                "val/f1_w_vel": losses['val']['F1 w/ Vel'],
-                                "lr": lr,
-                                "mfu": running_mfu*100, # convert to percentage
-                            })
-                        if losses['val']['Loss'] < best_val_loss or always_save_checkpoint:
-                            best_val_loss = losses['val']['Loss']
-                            if iter_num > 0:
-                                checkpoint = {
-                                    'model': model.state_dict(),
-                                    'optimizer': optimizer.state_dict(),
-                                    'model_args': model_args,
-                                    'iter_num': iter_num,
-                                    'best_val_loss': best_val_loss,
-                                    'config': config,
-                                }
-                                print(f"saving checkpoint to {out_dir}")
-                                torch.save(checkpoint, os.path.join(out_dir, 'ckpt_' + model_name + '.pt'))
+                if iter_num % eval_interval == 0 and master_process:
+                    losses = estimate_loss()
+                    
+                    print(f"step {iter_num}: train loss {losses['train']['Loss']:.4f}, val loss {losses['val']['Loss']:.4f}")
+                    if wandb_log:
+                        wandb.log({
+                            "iter": iter_num,
+                            "train/loss": losses['train']['Loss'],
+                            "val/loss": losses['val']['Loss'],
+                            "train/f1": losses['train']['F1'],
+                            "val/f1": losses['val']['F1'],
+                            "train/f1_w_vel": losses['train']['F1 w/ Vel'],
+                            "val/f1_w_vel": losses['val']['F1 w/ Vel'],
+                            "lr": lr,
+                            "mfu": running_mfu*100, # convert to percentage
+                        })
+                    if losses['val']['Loss'] < best_val_loss or always_save_checkpoint:
+                        best_val_loss = losses['val']['Loss']
+                        if iter_num > 0:
+                            checkpoint = {
+                                'model': model.state_dict(),
+                                'optimizer': optimizer.state_dict(),
+                                'model_args': model_args,
+                                'iter_num': iter_num,
+                                'best_val_loss': best_val_loss,
+                                'config': config,
+                            }
+                            print(f"saving checkpoint to {out_dir}")
+                            torch.save(checkpoint, os.path.join(out_dir, 'ckpt_' + model_name + '.pt'))
                 if iter_num == 0 and eval_only:
                     break
+                print('Waiting for everyone', str(accelerator.device))
                 accelerator.wait_for_everyone()
                 # forward backward update, with optional gradient accumulation to simulate larger batch size
                 # and using the GradScaler if data type is float16
                 mel = melspectrogram(audio.squeeze())
+                print('Training started!', str(accelerator.device))
                 pred_onsets, pred_vel = model(mel)
+                print('Forward pass done!', str(accelerator.device))
                 loss = bce_loss(pred_onsets, onsets) + velocity_loss_coeff * regression_loss(pred_vel, velocities)
+                print('Loss calculated!', str(accelerator.device))
                 # loss = loss / gradient_accumulation_steps # scale the loss to account for gradient accumulation
 
                 # gradient scaling if training in fp16
                 scaler.scale(loss)
                 accelerator.backward(loss)
+                print('Backward pass done!', str(accelerator.device))
 
                 # clip the gradient
                 if grad_clip != 0.0:
