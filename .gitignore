@@ -14,4 +14,7 @@ Session.vim
 /trash
 /misc
 /mdx
+wandb/
 .mypy_cache
+out/
+*.pt
