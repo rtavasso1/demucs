@@ -81,7 +81,7 @@ class AudioMIDIDataset(Dataset):
                     velocities_sparse[start_sample, note.pitch] = note.velocity
             # Convert arrays to tensors
             onsets_sparse = torch.tensor(onsets_sparse, dtype=torch.float32) # (num_samples,88)
-            velocities_sparse = torch.tensor(velocities_sparse, dtype=torch.float32) # (num_samples,88)
+            velocities_sparse = torch.tensor(velocities_sparse/np.max(velocities_sparse), dtype=torch.float32) # (num_samples,88)
         else:      
             # Initialize arrays for onsets and velocities
             onsets_sparse = np.zeros((self.num_samples,88))
@@ -95,7 +95,7 @@ class AudioMIDIDataset(Dataset):
                     velocities_sparse[start_sample] = note.velocity
             # Convert arrays to tensors
             onsets_sparse = torch.tensor(onsets_sparse, dtype=torch.float32) # (num_samples,88)
-            velocities_sparse = torch.tensor(velocities_sparse, dtype=torch.float32) # (num_samples,88)
+            velocities_sparse = torch.tensor(velocities_sparse/np.max(velocities_sparse), dtype=torch.float32) # (num_samples,88)
 
         return waveform, onsets_sparse, velocities_sparse
 
@@ -136,11 +136,11 @@ def shuffle(waveform, onsets, velocities, num_samples, sample_length, sr_ratio=4
     chunked_waveform = waveform.view(sample_length * batch_size, 1, num_samples // sample_length)
 
     # Adjust the chunking for onsets and velocities based on the sample rate ratio
-    onsets_sample_length = int(num_samples // sr_ratio)
-    velocities_sample_length = int(num_samples // sr_ratio)
+    onsets_num_samples = int(num_samples // sr_ratio)
+    velocities_num_samples = int(num_samples // sr_ratio)
 
-    chunked_onsets = onsets.view(sample_length * batch_size, onsets_sample_length // sample_length, 88)
-    chunked_velocities = velocities.view(sample_length * batch_size, velocities_sample_length // sample_length, 88)
+    chunked_onsets = onsets.view(sample_length * batch_size, onsets_num_samples // sample_length, 88)
+    chunked_velocities = velocities.view(sample_length * batch_size, velocities_num_samples // sample_length, 88)
 
     # Shuffle
     indices = torch.randperm(batch_size * sample_length)
@@ -150,8 +150,8 @@ def shuffle(waveform, onsets, velocities, num_samples, sample_length, sr_ratio=4
 
     # Reassemble
     combined_waveform = shuffled_waveform.view(batch_size, 1, num_samples)
-    combined_onsets = shuffled_onsets.view(batch_size, onsets_sample_length, 88)
-    combined_velocities = shuffled_velocities.view(batch_size, velocities_sample_length, 88)
+    combined_onsets = shuffled_onsets.view(batch_size, onsets_num_samples, 88)
+    combined_velocities = shuffled_velocities.view(batch_size, velocities_num_samples, 88)
 
     return combined_waveform, combined_onsets, combined_velocities
 

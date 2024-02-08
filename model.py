@@ -8,6 +8,7 @@ from librosa.util import pad_center
 from scipy.signal import get_window
 from torch.autograd import Variable
 import inspect
+from rotary_embedding_torch import RotaryEmbedding
 
 SAMPLE_RATE = 44100
 HOP_LENGTH = 441 # SAMPLE_RATE * 32 // 1000
@@ -115,6 +116,7 @@ class BiLSTM(nn.Module):
 
     def forward(self, x):
         if self.training:
+            print(x.shape)
             return self.rnn(x)[0]
         else:
             # evaluation mode: support for longer sequences that do not fit in memory
@@ -143,7 +145,65 @@ class BiLSTM(nn.Module):
                     output[:, start:end, hidden_size:] = result[:, :, hidden_size:]
 
             return output
+class CustomAttention(nn.Module):
+    def __init__(self, d_model, n_heads, rotary_emb):
+        super().__init__()
+        self.rotary_emb = RotaryEmbedding(dim=d_model // n_heads // 2)
+        self.n_heads = n_heads
+        self.d_head = d_model // n_heads
+        self.scale = self.d_head ** -0.5
 
+        # Linear layers for projecting the input to Q, K, V spaces
+        self.qkv_proj = nn.Linear(d_model, 3 * d_model)
+
+    def forward(self, x):
+        batch_size, seq_len, _ = x.size()
+        qkv = self.qkv_proj(x).reshape(batch_size, seq_len, self.n_heads, 3 * self.d_head).permute(2, 0, 3, 1)
+        q, k, v = qkv.chunk(3, dim=-2)
+
+        # Apply rotary embeddings to queries and keys
+        q = self.rotary_emb.rotate_queries_or_keys(q)
+        k = self.rotary_emb.rotate_queries_or_keys(k)
+
+        # Compute attention (scaled dot-product attention)
+        attn_scores = torch.matmul(q, k.transpose(-2, -1)) * self.scale
+        attn_probs = F.softmax(attn_scores, dim=-1)
+
+        # Apply attention to values
+        attn_output = torch.matmul(attn_probs, v).transpose(1, 2).reshape(batch_size, seq_len, -1)
+
+        return attn_output
+
+class CustomTransformerEncoderLayer(nn.Module):
+    def __init__(self, d_model, nhead, dim_feedforward, dropout=0.1):
+        super().__init__()
+        self.rotary_emb = RotaryEmbedding(dim=d_model // nhead)
+        self.self_attn = CustomAttention(d_model, nhead, self.rotary_emb)
+        self.linear1 = nn.Linear(d_model, dim_feedforward)
+        self.dropout = nn.Dropout(dropout)
+        self.linear2 = nn.Linear(dim_feedforward, d_model)
+
+        self.norm1 = nn.LayerNorm(d_model)
+        self.norm2 = nn.LayerNorm(d_model)
+        self.dropout1 = nn.Dropout(dropout)
+        self.dropout2 = nn.Dropout(dropout)
+
+    def forward(self, src):
+        src2 = self.self_attn(self.norm1(src))
+        src = src + self.dropout1(src2)
+        src2 = self.linear2(self.dropout(F.relu(self.linear1(self.norm2(src)))))
+        src = src + self.dropout2(src2)
+        return src
+
+class MyTransformer(nn.Module):
+    def __init__(self, d_model, n_head, n_layers, dropout):
+        super().__init__()
+        self.encoder = nn.ModuleList([CustomTransformerEncoderLayer(d_model=d_model, nhead=n_head, dropout=dropout, dim_feedforward=d_model*4) for _ in range(n_layers)])
+
+    def forward(self, x):
+        for layer in self.encoder:
+            x = layer(x)
+        return x
 class ConvStack(nn.Module):
     def __init__(self, input_features, output_features):
         super().__init__()
@@ -170,35 +230,34 @@ class ConvStack(nn.Module):
         )
         self.fc = nn.Sequential(
             #nn.Linear((output_features // 8) * (input_features // 4), output_features),
-            #nn.Linear(N_MELS, output_features),
             nn.Linear(1984, output_features),
             nn.Dropout(0.5)
         )
 
     def forward(self, mel):
-        #print('mel: ', mel.shape)
+        #print('mel shape: ', mel.shape)
         x = mel.view(mel.size(0), 1, mel.size(1), mel.size(2))
+        #print('x shape: ', x.shape)
         x = self.cnn(x)
-        #print('cnn: ', x.shape)
+        #print('cnn shape: ', x.shape)
         x = x.transpose(1, 2).flatten(-2)
-        #print(x.shape)
-        # x = x.view(x.size(0), -1, N_MELS)
         x = self.fc(x)
         return x
 
 
 class OnsetsAndFrames(nn.Module):
-    def __init__(self, input_features=1, output_features=88, model_complexity=16):
+    def __init__(self, input_features=250, output_features=88, model_size=256, LSTM_size=64):
         super().__init__()
 
-        model_size = model_complexity * 16
-        sequence_model = lambda input_size, output_size: BiLSTM(input_size, output_size // 2)
+        # sequence_model = lambda input_size, output_size: BiLSTM(input_size, output_size)
+        sequence_model = lambda a, b: MyTransformer(d_model=model_size, n_head=4, n_layers=4, dropout=0.1)
 
         self.onset_stack = nn.Sequential(
             ConvStack(input_features, model_size),
-            sequence_model(model_size, model_size),
-            nn.Linear(model_size, output_features),
-            nn.Sigmoid()
+            sequence_model(model_size, LSTM_size),
+            nn.Dropout(0.5),
+            # nn.Linear(LSTM_size * 2, output_features)
+            nn.Linear(model_size, output_features)
         )
         self.velocity_stack = nn.Sequential(
             ConvStack(input_features, model_size),
@@ -207,9 +266,7 @@ class OnsetsAndFrames(nn.Module):
 
     def forward(self, mel):
         onset_pred = self.onset_stack(mel)
-        #print('onset_pred: ', onset_pred.shape)
         velocity_pred = self.velocity_stack(mel)
-        #print('velocity_pred: ', velocity_pred.shape)
 
         return onset_pred, velocity_pred
     

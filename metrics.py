@@ -6,7 +6,7 @@ import warnings
 # Suppress FutureWarning
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-def extract_notes(onsets, velocities, onset_threshold=0.5, predictions=False):
+def extract_notes_old(onsets, velocities, onset_threshold=0.5, predictions=False):
     """
     Finds the onset timings and corresponding velocity values based on the onsets information
 
@@ -37,10 +37,56 @@ def extract_notes(onsets, velocities, onset_threshold=0.5, predictions=False):
     # Sort by frame index (chronological order)
     onset_vel_pairs.sort(key=lambda x: x[0])
 
-    # Separate the sorted pairs into two lists
-    sorted_onset_indices, sorted_velocities = zip(*onset_vel_pairs)
+    # Check if onset_vel_pairs is not empty
+    if onset_vel_pairs:
+        # Separate the sorted pairs into two lists
+        sorted_onset_indices, sorted_velocities = zip(*onset_vel_pairs)
+        return np.array(sorted_onset_indices), np.array(sorted_velocities)
+    else:
+        # Return empty arrays or handle it differently if needed
+        return np.array([]), np.array([])
 
     return np.array(sorted_onset_indices), np.array(sorted_velocities)
+
+def extract_notes(onsets, velocities, onset_threshold=0.5, predictions=False, conversion_factor=100):
+    """
+    Finds the onset timings and corresponding velocity values based on the onsets information
+
+    Parameters
+    ----------
+    onsets: torch.FloatTensor, shape = [frames, bins]
+    velocity: torch.FloatTensor, shape = [frames, bins]
+    onset_threshold: float
+    conversion_factor: int converts frame indices to seconds. Depends on midi sample rate (100 for OaF, 44100 for HTDemucs)
+
+    Returns
+    -------
+    sorted_onset_indices: np.ndarray of onset times in seconds sorted chronologically
+    sorted_velocities: np.ndarray of velocity values for each onset sorted chronologically
+    """
+
+    if predictions:
+        onsets = torch.sigmoid(onsets)
+        onsets = onsets > onset_threshold
+        velocities = torch.clamp(velocities, 0, 127)
+
+    # Find the indices of non-zero (or onset) elements
+    non_zero_indices = torch.nonzero(onsets, as_tuple=True)
+
+    # Retrieve velocities at these indices
+    non_zero_velocities = velocities[non_zero_indices]
+
+    # Convert indices to numpy, first element of indices corresponds to frames
+    frames = non_zero_indices[0].cpu().numpy()
+
+    # Sort by frame index (chronological order) and get sorting indices
+    sorted_indices = np.argsort(frames)
+
+    # Use sorted indices to sort frames and velocities
+    sorted_frames = frames[sorted_indices]/conversion_factor
+    sorted_velocities = non_zero_velocities.cpu().numpy()[sorted_indices]
+
+    return sorted_frames, sorted_velocities
 
 def sparse_to_dense(onsets, velocities, sample_rate=44100, predictions=False):
     """
@@ -66,7 +112,7 @@ def sparse_to_dense(onsets, velocities, sample_rate=44100, predictions=False):
 
     return dense_onsets, dense_velocities
 
-def f1_score(sparse_reference_onsets, sparse_estimated_onsets, sparse_reference_velocities, sparse_estimated_velocities, OaF_midi=False):
+def f1_score(sparse_reference_onsets, sparse_estimated_onsets, sparse_reference_velocities, sparse_estimated_velocities, OaF_midi=False, threshold=0.15):
     """
     Calculate F1 scores w/ and w/o velocities
 
@@ -100,10 +146,12 @@ def f1_score(sparse_reference_onsets, sparse_estimated_onsets, sparse_reference_
     else:
         batch_f1_scores = []
         batch_f1_scores_w_vel = []
-        for i in range(sparse_reference_onsets.shape[0]):
-            estimated_onsets, estimated_velocities = extract_notes(sparse_estimated_onsets[i], sparse_estimated_velocities[i], predictions=True) # (num_onsets,), (num_onsets,)
-            reference_onsets, reference_velocities = extract_notes(sparse_reference_onsets[i], sparse_reference_velocities[i]) # (num_onsets,), (num_onsets,)
 
+        for i in range(sparse_reference_onsets.shape[0]):
+            estimated_onsets, estimated_velocities = extract_notes(sparse_estimated_onsets[i], sparse_estimated_velocities[i], predictions=True, onset_threshold=threshold) # (num_onsets,), (num_onsets,)
+            reference_onsets, reference_velocities = extract_notes(sparse_reference_onsets[i], sparse_reference_velocities[i], onset_threshold=threshold) # (num_onsets,), (num_onsets,)
+
+            mir_eval.onset.validate(reference_onsets, estimated_onsets)
             f1_score = mir_eval.onset.f_measure(reference_onsets, estimated_onsets)
 
             # Create reference intervals by stacking onsets into 2 columns, reference pitches is an array of zeros
@@ -115,6 +163,7 @@ def f1_score(sparse_reference_onsets, sparse_estimated_onsets, sparse_reference_
             estimated_pitches = np.ones_like(estimated_velocities)
 
             f1_score_w_vel = mir_eval.transcription_velocity.precision_recall_f1_overlap(reference_intervals, reference_pitches, reference_velocities, estimated_intervals, estimated_pitches, estimated_velocities)
+
             batch_f1_scores.append(f1_score[0])
             batch_f1_scores_w_vel.append(f1_score_w_vel[2])
 
